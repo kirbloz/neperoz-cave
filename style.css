@@ -1,0 +1,556 @@
+/* credits for gruvbox theme: https://userstyles.world/style/16233/nekoweb-gruvbox */
+
+/* credits for palette: https://github.com/morhetz/gruvbox*/
+
+:root {
+	--bg-color: #282828;
+	--darker-bg-color: #1d2021;
+	--lighter-bg-color: #3c3836;
+	--fg-color: #ebdbb2;
+	--darker-fg-color: #d5c4a1;
+	--lighter-fg-color: #fbf1c7;
+	--gruv-red: #fb4934;
+	--gruv-dark-red: #cc241d;
+	--gruv-green: #b8bb26;
+	--gruv-dark-green: #98971a;
+	--gruv-yellow: #fabd2f;
+	--gruv-dark-yellow: #d79921;
+	--gruv-blue: #83a598;
+	--gruv-dark-blue: #458588;
+	--gruv-purple: #d3869b;
+	--gruv-dark-purple: #b16286;
+	--gruv-aqua: #8ec07c;
+	--gruv-dark-aqua: #689d6a;
+	--gruv-orange: #fe8019;
+	--gruv-dark-orange: #d65d0e;
+	--gruv-light-gray: #a89984;
+	--gruv-gray: #928374;
+	--gruv-dark-gray: #928374;
+
+	--almostwhite: #f9f5d7;
+	--cream: #fbf1c7;
+	--orange: #fe8019;
+	--dark-orange: #d65d0e;
+	--peach: #ff0000;
+	--pink: #ff0000;
+	--purple: #d3869b;
+	--palegreen: #ff0000;
+	--gray: #ff0000;
+	--lightbrown: #ff0000;
+	--darkbrown: #774519;
+	--light-red: #fb4934;
+	--crazy-green: #ff0000;
+	--gradientorange: linear-gradient(#fff2df, #fadabe);
+
+	--min-dim-main: auto;
+	--min-dim-side: 1920/6px;
+	--max-dim-main: auto;
+	--max-dim-side: 300px;
+
+	--min-win: 500px;
+	--max-win: 1000px;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-family: "Courier New", sans-serif;
+	/*font-family: "RussianGothic", "MS UI Gothic", "NEC_APC3", Tahoma;*/
+	font-size: 16px;
+	padding: 0;
+	margin: 0;
+
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -webkit-crisp-edges;
+
+}
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+	background-image: url("https://neperoz-cave.nekoweb.org/media/images/stars5.gif");
+	/*image-rendering: pixelated;*/
+}
+
+container {
+	
+	display: flex;
+	padding: 50px;
+	flex-direction: row;
+	gap: 50px;
+
+}
+
+/* main table where everything goes. first column is navigator and second column is actual boxes w content*/
+
+/* snippets from https://candywolf.neocities.org/ */
+#main {
+	margin-right: auto;
+
+	/* flex behaviour on windows*/
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	align-items: flex-start;
+	gap: 50px;
+
+}
+
+#side {
+	margin-left: auto;
+	padding: 0px 0px 5px 10px;
+	
+	display: flex;
+	flex-direction: column;
+	/*overflow: hidden;*/
+	
+	max-width: var(--max-dim-side);
+}
+
+/* - - - - navigation bar - - - - */
+
+.navigation {
+	display: flex;
+	
+	vertical-align: left;
+	align-items: left;
+	flex-direction: column;
+
+	border: 2px dashed var(--orange);
+
+}
+
+.navigation td {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	/*background-color: var(--gruv-red);*/
+}
+
+/* Equal sized borders on the left and right of each element for consistancy */
+.navigation div {
+	float: left;
+}
+
+/* Except on the first and last elements */
+.navigation div:first-child {
+	border-left: none;
+}
+
+.navigation div:last-child {
+	border-right: none;
+}
+
+.navigation div a {
+	display: block;
+	color: var(--fg-color);
+	font-weight: bold;
+	/*text-align: center;*/
+	padding: 5px 10px;
+	padding-top: 7px;
+	min-width: 70px;
+	height: 20px;
+	text-decoration: none;
+}
+
+.navigation div a:hover {
+	color: var(--gruv-yellow);
+	/*background: var(--lighter-bg-color);
+	border-radius: 5px;*/
+}
+
+.navspacer {
+	/*flex: auto;*/
+}
+
+/* - - - - windows xp style - - - - */
+
+.window {
+	/*border: 2px solid var(--gruv-gray);*/
+	background: var(--darker-bg-color);
+	/*margin: 20px;*/
+	min-width: var(--min-win);
+	max-width: var(--max-win);
+}
+
+.windowHeader {
+	background-color: var(--cream);
+	text-align: right;
+	border-top: 2px solid var(--gruv-gray);
+	border-right: 2px solid var(--gruv-gray);
+	border-left: 2px solid var(--gruv-gray);
+	border-radius: 5px 5px 0px 0px;
+	padding: 6px 6px 6px 4px;
+}
+
+.windowHeader > h1 {
+	float: left;
+	margin: 0px 3px 0 10px;
+	line-height: 30px;
+	/*font-size: 17px;*/
+}
+
+.windowHeader > span {
+	display: inline-block;
+	border: 2px solid var(--darker-bg-color);
+	margin-left: 4px;
+	font-size: 19px;
+	padding: 2px 10px 2px 8px;
+
+	border-radius: 5px;
+	line-height: 20px;
+	width: 12px;
+	height: 20px;
+	position: relative;
+	overflow: hidden;
+}
+
+.windowHeader > span:hover {
+	background: var(--almostwhite);
+}
+.windowHeader > span.winclose:hover {
+	background: var(--gruv-red);
+}
+.windowHeader > span.winminimize:hover {
+	background: var(--gruv-yellow);
+}
+.windowHeader > span.winmaximize:hover {
+	background: var(--gruv-green);
+}
+
+.windowHeader > span > span {
+	display: inline-block;
+	height: 8px;
+	width: 10px;
+	position: absolute;
+	top: 6px;
+	left: 10px;
+}
+.winminimize > span {
+	border-bottom: 3px solid var(--darker-bg-color);
+}
+.winmaximize > span {
+	border: 2px solid var(--darker-bg-color);
+	border-top: 3px solid var(--darker-bg-color);
+}
+
+.wincontent {
+	width: auto;
+	min-width: var(--min-dim-main);
+	min-height: 140px;
+	padding: 10px;
+	border: 2px solid var(--gruv-gray);
+	border-radius: 0 0 5px 5px;
+
+	text-wrap: wrap;
+	color: var(--almostwhite);
+	box-sizing: border-box;
+}
+
+.wincontent a {
+	text-decoration: none;
+	font-style: italic;
+	color: var(--almostwhite);
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+p {
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 19px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+h1 {
+	font-size: 19px;
+	font-style: normal;
+	line-height: 19px;
+	font-weight: bolder;
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+h2 {
+	font-size: 18px;
+	font-style: normal;
+	line-height: 19px;
+	font-weight: bolder;
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 3px;
+	/*background: var(--darker-bg-color);
+	background-color: var(--darker-bg-color);
+	color: var(--gruv-yellow);*/
+}
+
+h3 {
+	font-size: 16px;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: bolder;
+
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding: 3px;
+	/*background: var(--darker-bg-color);
+	background-color: var(--darker-bg-color);
+	color: var(--gruv-yellow);*/
+}
+
+.h-subheader{
+	color: var(--almostwhite);
+	padding: 3px;
+}
+
+#buttons-div img {
+	width: 88px;
+	height: 31px;
+}
+
+hr {
+	border: none;
+	border-bottom: 1px solid var(--orange);
+}
+
+textarea {
+	resize: none;
+}
+
+.subtext {
+	line-height: 19px;
+	font-size: 12px;
+}
+
+.wincontent li {
+	list-style: none;
+}
+
+.wincontent > ul {
+	/*margin: 0;*/
+}
+.wincontent > ul > ul {
+	margin: 0;
+	padding: 0;
+}
+
+.wincontent > table {
+	align-items: flex-start;
+}
+
+#sona {
+	max-width: auto;
+	max-height: 200px;
+	object-fit: cover;
+	border-radius: 5px;
+	border: 2px solid var(--cream);
+}
+
+#buttonz {
+	overflow: hidden;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* - - - - header elements - - - - */
+
+.header {
+	display: flex;
+	grid-gap: 2px;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+
+	grid-auto-flow: row;
+	grid-area: header;
+
+	background-color: var(--darker-bg-color);
+	/*align-content: center;*/
+	padding: 5px 0px 5px 5px;
+
+	border: 2px solid var(--gruv-light-gray);
+	border-radius: 2px;
+	color: var(--almostwhite);
+}
+
+.header div {
+	place-self: center;
+	margin: 0px 0px 0px 0px;
+}
+
+.sub-header {
+	background-color: var(--darker-bg-color);
+	/*align-content: center;*/
+	padding: 5px 0px 5px 5px;
+
+	border: 2px solid var(--gruv-light-gray);
+	border-radius: 2px;
+	color: var(--almostwhite);
+}
+
+#kirby {
+	vertical-align: top;
+	margin-right: 5px;
+	position: relative;
+	cursor: pointer;
+	object-fit: cover;
+}
+
+#owl-tk {
+	float: center;
+	margin: 0 35px;
+	/*border: 2px solid var(--almostwhite);*/
+	border-radius: 5px;
+	width: 180px;
+	max-width: 100%;
+	max-height: 100%;
+	vertical-align: central;
+	position: relative;
+	object-fit: cover;
+	image-rendering: smooth;
+}
+
+.title {
+	border-bottom: 1px solid #ccc;
+	max-width: 500px;
+	margin: auto;
+}
+.title-note {
+	font-size: 60%;
+	color: #999;
+}
+.flex-title {
+	display: flex;
+	align-items: flex-end;
+	flex-wrap: wrap;
+}
+
+.flex-title,
+span {
+	white-space: nowrap;
+}
+.flex-title,
+.title-main {
+	flex-grow: 1;
+}
+
+.banner {
+	display: flex;
+	height: 80px;
+
+	background-size: 100%;
+	background-color: var(--bg-color);
+	align-content: center;
+
+	image-rendering: auto;
+	position: relative;
+}
+
+#bannerauthor {
+	position: absolute;
+	left: 6px;
+	bottom: 6px;
+	font-size: 12px;
+	color: var(--background-color);
+	background-color: #ffffffb0;
+	padding: 1px 4px;
+}
+
+#bannerauthor > a {
+	color: var(--gruv-dark-purple);
+}
+
+/* idk wtf this is */
+
+.screenshot {
+	max-height: 100%;
+	image-rendering: auto;
+	margin-left: 0.2px;
+	width: 244px;
+	height: 138px;
+}
+
+textarea {
+	width: 97px;
+	background: var(--background-color);
+	color: var(--foreground-color);
+	height: 30px;
+	border: 2px solid var(--darker-background-color);
+	font-family: "MS UI Gothic", Verdana, Tahoma, sans-serif;
+}
+
+/* - - - - footer elements - - - - */
+.footer {
+	grid-area: footer;
+	background-color: var(--darker-background-color);
+	height: auto;
+	padding: 3px;
+	text-align: center;
+	font-size: 14px;
+}
+
+/* - - - News - - - - - */
+.newsbox {
+	padding: 10px;
+	margin: auto;
+	width: 50%;
+}
+
+.news {
+	border: 2px solid var(--darker-background-color);
+	background-color: var(--darker-background-color);
+	padding: 10px;
+}
+
+/* - - - - - - - - notepad theme - - - - - - - - - - - */
+/* https://css-tricks.com/how-to-create-a-notebook-design-with-css/ */
+
+note {
+	/*background-color: #f5f5f5;*/
+	background-color: var(--cream);
+	width: auto;
+	margin: 0 auto;
+	padding: 0;
+}
+
+note > h4 {
+	color: #cd0000;
+	font-size: 42px;
+	letter-spacing: -2px;
+	text-align: left;
+}
+.list {
+	color: #555;
+	font-size: 16px;
+	padding: 0 !important;
+	width: 500px;
+	font-family: courier, monospace;
+	border: 1px solid #dedede;
+}
+.list li {
+	list-style: none;
+	border-bottom: 1px dotted #ccc;
+	text-indent: 25px;
+	height: auto;
+	padding: 10px;
+	text-transform: capitalize;
+}
+.list li:hover {
+	background-color: #f9f1af;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+}
+.lines {
+	border-left: 1px solid #ffaa9f;
+	border-right: 1px solid #ffaa9f;
+	width: 2px;
+	float: left;
+	height: 495px;
+	margin-left: 40px;
+}
