@@ -4,11 +4,6 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta
-			name="text:Cursor"
-			content="url('https://cur.cursors-4u.net/games/gam-12/gam1106.cur')"
-		/>
-		<meta name="text:URL Clickable Cursor" content="" />
 
 		<title>THE CAVE | INFO</title>
 
@@ -20,9 +15,7 @@
 		<!-- HEADER AND BANNER -->
 		<div class="banner">
 			<h3 class="title flex-title">
-				<span class="title-main" style="color: var(--almostwhite);">
-					NEPEROZ'S CAVE
-				</span>
+				<span class="title-main">NEPEROZ'S CAVE</span>
 				<span class="title-note">con furore da settembre '24</span>
 			</h3>
 		</div>
@@ -41,9 +34,7 @@
 						</a>
 					</div>
 					<div>
-						<h1 style="color: var(--almostwhite); padding: 3px;">
-							ABOUT
-						</h1>
+						<h1 class="h-subheader">ABOUT</h1>
 					</div>
 					<div>|</div>
 					<div><h2>CIRCUITS??</h2></div>
@@ -132,19 +123,13 @@
 				<div id="buttons-div">
 					<div class="sub-header" style="width:140px">
 						<div>
-							<h3
-								style="color: var(--almostwhite); padding: 3px;"
-							>
-								FRIENDS' SITES
-							</h3>
+							<h3 class="h-subheader">FRIENDS' SITES</h3>
 						</div>
 					</div>
 					<br />
 					<a href="https://ignes-fatui.nekoweb.org">
 						<img
 							src="/media/images/ignes-fatui.gif"
-							width="88"
-							height="31"
 							alt="friends button. the text IGNES-FATUI right next to the head of a smiling lamb. in the background there is a bunch of orange and yellow sparkles."
 						/>
 					</a>
@@ -155,19 +140,13 @@
 				<div id="buttons-div">
 					<div class="sub-header" style="width: 40px;">
 						<div>
-							<h3
-								style="color: var(--almostwhite); padding: 3px;"
-							>
-								MII
-							</h3>
+							<h3 class="h-subheader">MII</h3>
 						</div>
 					</div>
 					<br />
 					<a href="https://neperoz-cave.nekoweb.org/">
 						<img
 							src="/media/images/nep-button-kirby.png"
-							width="88"
-							height="31"
 							alt="neperoz cave button. blue handwritten text on yellow background saying 'NEPEROZ' and a little kirby mounting a warp star."
 						/>
 					</a>
@@ -180,6 +159,7 @@
 				</div>
 				<!--<audio autoplay><source src=“https://bandcamp.com/EmbeddedPlayer/track=3350414577/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=small/transparent=true/” type=“audio/(mpeg, wav, or ogg)”></audio> -->
 				<iframe
+					id="g-gendetta-player"
 					style="border: 0; width: 100%; height: 120px;"
 					src="https://bandcamp.com/EmbeddedPlayer/track=3350414577/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=small/transparent=true/"
 					seamless
@@ -197,8 +177,8 @@
 			<!-- windows?????? -->
 			<div id="main">
 				<!-- win one -->
-				<div class="window">
-					<div class="windowHeader" style="">
+				<div class="window base">
+					<div class="windowHeader">
 						<h1>✮ABT ME✮</h1>
 						<span title="Minimize" class="winminimize">
 							<span></span>
@@ -227,20 +207,7 @@
 									style="text-align: center; height: auto;vertical-align:center;"
 								>
 									male, 22, white
-									<span
-										style="
-    display: inline-block;
-    height: 1rem;
-    margin-left: 3px;
-    aspect-ratio: 3 / 2;
-    line-height: 1;
-    vertical-align: middle;
-    border: 1px solid #666;
-    border-radius: 1px;
-    box-shadow: inset 0 0 1px #fff, 0 1px 2px #0004;
-    background: linear-gradient(to bottom, #5bcffb 0% 20%, #f5abb9 20% 40%, white 40% 60%, #f5abb9 60% 80%, #5bcffb 80% 100%);
-"
-									></span>
+									<span id="trans-flag"></span>
 									<br />
 									cs eng major
 									<br />
@@ -260,11 +227,8 @@
 				</div>
 
 				<!-- win hardware and software -->
-				<div class="window">
-					<div
-						class="windowHeader"
-						style="background-color: var(--gruv-blue); border: 2px solid var(--gruv-aqua);"
-					>
+				<div class="window blue">
+					<div class="windowHeader">
 						<h1>⌨ SPECS ⌨</h1>
 						<span title="Minimize" class="winminimize">
 							<span></span>
@@ -276,10 +240,7 @@
 						<span title="Close" class="winclose">x</span>
 					</div>
 
-					<div
-						class="wincontent"
-						style="border: 2px solid var(--gruv-aqua); border-top: 0px solid;"
-					>
+					<div class="wincontent">
 						<div
 							style="display: flex; justify-content: space-evenly; padding-top: 5px; "
 						>
@@ -353,11 +314,8 @@
 				</div>
 
 				<!-- win media i enjoy -->
-				<div class="window">
-					<div
-						class="windowHeader"
-						style="background: var(--gruv-dark-purple); border: 2px solid var(--purple);"
-					>
+				<div class="window pink">
+					<div class="windowHeader">
 						<h1>✿INTERESTS AND MEDIA I LIKE✿</h1>
 						<span title="Minimize" class="winminimize">
 							<span></span>
@@ -369,10 +327,7 @@
 						<span title="Close" class="winclose">x</span>
 					</div>
 
-					<div
-						class="wincontent"
-						style="border: 2px solid var(--purple); border-top: 0px solid;"
-					>
+					<div class="wincontent">
 						<li>
 							<ul>
 								<li>＋ reptiles, insects</li>

@@ -61,7 +61,6 @@ html {
 
 	image-rendering: -moz-crisp-edges;
 	image-rendering: -webkit-crisp-edges;
-
 }
 
 body {
@@ -72,17 +71,16 @@ body {
 }
 
 container {
-	
 	display: flex;
 	padding: 50px;
 	flex-direction: row;
 	gap: 50px;
-
 }
 
 /* main table where everything goes. first column is navigator and second column is actual boxes w content*/
 
 /* snippets from https://candywolf.neocities.org/ */
+
 #main {
 	margin-right: auto;
 
@@ -92,31 +90,101 @@ container {
 	overflow: auto;
 	align-items: flex-start;
 	gap: 50px;
-
 }
 
 #side {
 	margin-left: auto;
 	padding: 0px 0px 5px 10px;
-	
+
 	display: flex;
 	flex-direction: column;
 	/*overflow: hidden;*/
-	
+
 	max-width: var(--max-dim-side);
+}
+
+/* set the dims of each button forcefully */
+#buttons-div img {
+	width: 88px;
+	height: 31px;
+}
+
+/* sona icon on the homepage first window */
+#sona {
+	margin: 0 35px;
+
+	border-radius: 5px;
+	border: 2px solid var(--cream);
+
+	object-fit: cover;
+	float: right;
+
+	max-width: auto;
+	max-height: 200px;
+}
+
+/* scrolling marquee id */
+#buttonz {
+	overflow: hidden;
+}
+
+/* trans flag */
+#trans-flag {
+	display: inline-block;
+	height: 1rem;
+	margin-left: 3px;
+	aspect-ratio: 3 / 2;
+	line-height: 1;
+	vertical-align: middle;
+	border: 1px solid #666;
+	border-radius: 1px;
+	box-shadow:
+		inset 0 0 1px #fff,
+		0 1px 2px #0004;
+	background: linear-gradient(
+		to bottom,
+		#5bcffb 0% 20%,
+		#f5abb9 20% 40%,
+		white 40% 60%,
+		#f5abb9 60% 80%,
+		#5bcffb 80% 100%
+	);
+}
+
+/* little kirbis div */
+#kirby {
+	vertical-align: top;
+	margin-right: 5px;
+	position: relative;
+	cursor: pointer;
+	object-fit: cover;
+}
+
+/* tokyo ghoul pic in about page's first window */
+#owl-tk {
+	float: center;
+	margin: 0 35px;
+	/*border: 2px solid var(--almostwhite);*/
+	border-radius: 5px;
+	width: 180px;
+	max-width: 100%;
+	max-height: 100%;
+	vertical-align: central;
+	position: relative;
+	object-fit: cover;
+	image-rendering: smooth;
 }
 
 /* - - - - navigation bar - - - - */
 
 .navigation {
 	display: flex;
-	
+
 	vertical-align: left;
 	align-items: left;
 	flex-direction: column;
 
 	border: 2px dashed var(--orange);
-
 }
 
 .navigation td {
@@ -143,46 +211,51 @@ container {
 
 .navigation div a {
 	display: block;
-	color: var(--fg-color);
-	font-weight: bold;
-	/*text-align: center;*/
+	height: 20px;
 	padding: 5px 10px;
 	padding-top: 7px;
+
+	font-weight: bold;
+	/*text-align: center;*/
+
 	min-width: 70px;
-	height: 20px;
+
 	text-decoration: none;
+	color: var(--fg-color);
 }
 
 .navigation div a:hover {
 	color: var(--gruv-yellow);
-	/*background: var(--lighter-bg-color);
-	border-radius: 5px;*/
 }
 
 .navspacer {
+	/* idk why i commented the line below */
 	/*flex: auto;*/
 }
 
-/* - - - - windows xp style - - - - */
+/* - - - - windows style - - - - */
 
 .window {
-	/*border: 2px solid var(--gruv-gray);*/
 	background: var(--darker-bg-color);
-	/*margin: 20px;*/
+
+	/* trying to fit the window inside the container and failing */
 	min-width: var(--min-win);
 	max-width: var(--max-win);
 }
 
 .windowHeader {
-	background-color: var(--cream);
+	/* background color are in the color windows classes */
+	/*background-color: var(--cream);*/
+	padding: 6px 6px 6px 4px;
 	text-align: right;
+
 	border-top: 2px solid var(--gruv-gray);
 	border-right: 2px solid var(--gruv-gray);
 	border-left: 2px solid var(--gruv-gray);
 	border-radius: 5px 5px 0px 0px;
-	padding: 6px 6px 6px 4px;
 }
 
+/* window's title */
 .windowHeader > h1 {
 	float: left;
 	margin: 0px 3px 0 10px;
@@ -190,6 +263,7 @@ container {
 	/*font-size: 17px;*/
 }
 
+/* THESE ARE THE BUILDING BLOCKS FOR THE WINDOWS LAYOUT */
 .windowHeader > span {
 	display: inline-block;
 	border: 2px solid var(--darker-bg-color);
@@ -234,22 +308,94 @@ container {
 	border-top: 3px solid var(--darker-bg-color);
 }
 
+.wincontent li {
+	list-style: none;
+}
+
+.wincontent > ul {
+	/*margin: 0;*/
+}
+.wincontent > ul > ul {
+	margin: 0;
+	padding: 0;
+}
+
+.wincontent > table {
+	align-items: flex-start;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* style for non-color stuff */
 .wincontent {
-	width: auto;
+	padding: 10px;
+	box-sizing: border-box;
+	text-wrap: normal;
+
 	min-width: var(--min-dim-main);
 	min-height: 140px;
-	padding: 10px;
-	border: 2px solid var(--gruv-gray);
-	border-radius: 0 0 5px 5px;
-
-	text-wrap: wrap;
-	color: var(--almostwhite);
-	box-sizing: border-box;
 }
 
 .wincontent a {
 	text-decoration: none;
 	font-style: italic;
+}
+
+/* base theme */
+.window.base > .windowHeader {
+	background-color: var(--cream);
+	border: 2px solid var(--gruv-gray);
+}
+
+.window.base .wincontent {
+	width: auto;
+
+	border: 2px solid var(--gruv-gray);
+	border-top: 0px solid;
+	border-radius: 0 0 5px 5px;
+
+	/* default */
+	color: var(--almostwhite);
+}
+
+.window.base .wincontent a {
+	/* default */
+	color: var(--almostwhite);
+}
+
+/* pink theme */
+.window.pink > .windowHeader {
+	background: var(--gruv-dark-purple);
+	border: 2px solid var(--purple);
+}
+
+.window.pink .wincontent {
+	border: 2px solid var(--purple);
+	border-top: 0px solid;
+
+	/* default */
+	color: var(--almostwhite);
+}
+
+.window.pink .wincontent a {
+	/* default */
+	color: var(--almostwhite);
+}
+
+/* blue theme */
+.window.blue > .windowHeader {
+	background-color: var(--gruv-blue);
+	border: 2px solid var(--gruv-aqua);
+}
+
+.window.blue .wincontent {
+	border: 2px solid var(--gruv-aqua);
+	border-top: 0px solid;
+	/* default */
+	color: var(--almostwhite);
+}
+
+.window.blue .wincontent a {
 	color: var(--almostwhite);
 }
 
@@ -284,9 +430,6 @@ h2 {
 	margin-top: 5px;
 	margin-bottom: 5px;
 	padding: 3px;
-	/*background: var(--darker-bg-color);
-	background-color: var(--darker-bg-color);
-	color: var(--gruv-yellow);*/
 }
 
 h3 {
@@ -298,19 +441,13 @@ h3 {
 	margin-top: 2px;
 	margin-bottom: 2px;
 	padding: 3px;
-	/*background: var(--darker-bg-color);
-	background-color: var(--darker-bg-color);
-	color: var(--gruv-yellow);*/
+
+	color: var(--gruv-yellow);
 }
 
-.h-subheader{
+.h-subheader {
 	color: var(--almostwhite);
 	padding: 3px;
-}
-
-#buttons-div img {
-	width: 88px;
-	height: 31px;
 }
 
 hr {
@@ -326,36 +463,6 @@ textarea {
 	line-height: 19px;
 	font-size: 12px;
 }
-
-.wincontent li {
-	list-style: none;
-}
-
-.wincontent > ul {
-	/*margin: 0;*/
-}
-.wincontent > ul > ul {
-	margin: 0;
-	padding: 0;
-}
-
-.wincontent > table {
-	align-items: flex-start;
-}
-
-#sona {
-	max-width: auto;
-	max-height: 200px;
-	object-fit: cover;
-	border-radius: 5px;
-	border: 2px solid var(--cream);
-}
-
-#buttonz {
-	overflow: hidden;
-}
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 /* - - - - header elements - - - - */
 
@@ -392,27 +499,7 @@ textarea {
 	color: var(--almostwhite);
 }
 
-#kirby {
-	vertical-align: top;
-	margin-right: 5px;
-	position: relative;
-	cursor: pointer;
-	object-fit: cover;
-}
-
-#owl-tk {
-	float: center;
-	margin: 0 35px;
-	/*border: 2px solid var(--almostwhite);*/
-	border-radius: 5px;
-	width: 180px;
-	max-width: 100%;
-	max-height: 100%;
-	vertical-align: central;
-	position: relative;
-	object-fit: cover;
-	image-rendering: smooth;
-}
+/* idk man i copied these snippets around */
 
 .title {
 	border-bottom: 1px solid #ccc;
@@ -436,6 +523,7 @@ span {
 .flex-title,
 .title-main {
 	flex-grow: 1;
+	color: var(--almostwhite);
 }
 
 .banner {
