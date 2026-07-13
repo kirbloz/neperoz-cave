@@ -1,0 +1,124 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import sona from "../assets/images/sona.jpg";
+
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/images/*.{png,jpg,jpeg,gif,svg}",
+  { eager: true },
+);
+
+function getImage(name: string) {
+  const img = images[`../assets/images/${name}`]?.default;
+  if (!img) throw new Error(`Image not found: ${name}`);
+  return img;
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <container>
+      <Sidebar />
+      <main>
+        <div class="window base">
+          <div
+            class="windowHeader"
+            style="background-color: #ffb901; border: 2px solid var(--cream);"
+          >
+            <h1>WELCOME.EXE</h1>
+            <span title="Minimize" class="winminimize">
+              <span></span>
+            </span>
+            <span title="Maximize" class="winmaximize">
+              <span></span>
+              <span></span>
+            </span>
+            <span title="Close" class="winclose">x</span>
+          </div>
+          <div class="wincontent" style="">
+            <h1>hello!</h1>
+            <div style="display: flex;">
+              <div>
+                <p>
+                  you may refer to me as nepero, and i am currently embarked on
+                  a (hellish) journey of figuring out how to work w css and
+                  html.
+                </p>
+                <p>this thingie on the right is my sona btw ------></p>
+              </div>
+              <div>
+                <img id="sona" src={sona.src} />
+              </div>
+            </div>
+            <br />
+            <hr />
+            <br />
+            <div>
+              <p>there isnt much here for now.. go browse the other pages!!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="window pink">
+          <div class="windowHeader" style="background: pink;">
+            <h1>kirby</h1>
+            <span title="Minimize" class="winminimize">
+              <span></span>
+            </span>
+            <span title="Maximize" class="winmaximize">
+              <span></span>
+              <span></span>
+            </span>
+            <span title="Close" class="winclose">x</span>
+          </div>
+          <div class="wincontent">
+            <h1>wip</h1>
+            <p>im slow ok?</p>
+            <p>have some kirbis</p>
+
+            <Image src={getImage("kirby_swim.gif")} alt="Kirby swimming" />
+            <Image
+              src={getImage("rock_kirby.gif")}
+              alt="Kirby as a rock star"
+            />
+            <Image src={getImage("kirbydance.gif")} alt="Kirby dancing" />
+            <Image src={getImage("kirbyinhaling2.gif")} alt="Kirby inhaling" />
+            <Image
+              src={getImage("kirby_cancel_right.gif")}
+              alt="Kirby cancel animation, facing right"
+            />
+            <Image
+              src={getImage("kirby_fat.gif")}
+              alt="Kirby after eating, round and full"
+            />
+            <Image
+              src={getImage("kirby_kiss.gif")}
+              alt="Kirby kiss animation"
+            />
+            <Image
+              src={getImage("kirby_mirror_right.gif")}
+              alt="Kirby mirror ability, facing right"
+            />
+            <Image
+              src={getImage("kirbyhammerwalk6.gif")}
+              alt="Kirby walking with hammer ability"
+            />
+
+            <hr />
+          </div>
+        </div>
+      </main>
+    </container>
+  </body>
+</html>

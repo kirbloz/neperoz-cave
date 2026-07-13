@@ -1,0 +1,44 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <container>
+      <Sidebar />
+      <!-- content boxes -->
+
+      <!-- windows?????? -->
+      <div id="main">
+        <note style="height: 420px">
+          <div class="lines" style="height: 420px"></div>
+
+          <ul class="list">
+            <li><span>dev to do:</span></li>
+            <li>☒ add hardware and software specs</li>
+            <li>☐ add visitor count</li>
+            <li>☐ figure out webrings</li>
+            <li>
+              ☒ organize css styling for window-like divs -> done as for sept
+              29th!
+            </li>
+            <li>☐ optimize for mobile</li>
+            <li>☐ add more buttons!!!!</li>
+            <li>☐ design a more serious button</li>
+            <li>☐ add music player/last played song</li>
+            <li>☐ add embed sans fight simulator</li>
+          </ul>
+        </note>
+      </div>
+      <!-- no more windows???? -->
+    </container>
+  </body>
+</html>
