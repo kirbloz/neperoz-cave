@@ -1,0 +1,89 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/images/*.{png,jpg,jpeg,gif,svg}",
+  { eager: true },
+);
+
+function getImage(name: string) {
+  const img = images[`../assets/images/${name}`]?.default;
+  if (!img) throw new Error(`Image not found: ${name}`);
+  return img;
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Usiamo un titolo personalizzato per l'errore -->
+    <BaseHead
+      title={`404 NOT FOUND | ${SITE_TITLE}`}
+      description={SITE_DESCRIPTION}
+    />
+  </head>
+  <body>
+    <Header />
+    <container>
+      <Sidebar />
+      <main>
+        <div class="window base" style="border-color: #dc3545;">
+          <div
+            class="windowHeader"
+            style="background-color: #dc3545; border: 2px solid var(--cream);"
+          >
+            <h1>ERROR_404.EXE</h1>
+            <span title="Minimize" class="winminimize">
+              <span></span>
+            </span>
+            <span title="Maximize" class="winmaximize">
+              <span></span>
+              <span></span>
+            </span>
+            <span title="Close" class="winclose">x</span>
+          </div>
+          <div class="wincontent">
+            <h1>page not found!</h1>
+            <div style="display: flex; align-items: center; gap: 20px;">
+              <div>
+                <p>
+                  uh oh! it seems you've stumbled upon a broken link, or maybe
+                  nepero haven't coded this page yet (web dev is hard, ok?).
+                </p>
+                <p>
+                  <a href="/" style="font-weight: bold; color: #ffb901;">
+                    [ click here to go back home ]
+                  </a>
+                </p>
+              </div>
+              <div>
+                <!-- Usiamo la GIF di kirby che aspira, come se avesse mangiato la pagina -->
+                <Image
+                  src={getImage("kirbyinhaling2.gif")}
+                  alt="Kirby inhaled this page"
+                />
+              </div>
+            </div>
+            <br />
+            <hr />
+            <br />
+            <div>
+              <p>meanwhile, you can look at this dancing kirby:</p>
+              <Image
+                src={getImage("kirbydance.gif")}
+                alt="Kirby dancing sprite"
+              />
+            </div>
+          </div>
+        </div>
+      </main>
+    </container>
+  </body>
+</html>

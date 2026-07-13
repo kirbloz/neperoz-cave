@@ -12,7 +12,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm install
@@ -20,10 +20,12 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
+      # upload
+
       - name: deploy2nekoweb
         uses: indiefellas/deploy2nekoweb@main
         with:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
-          nekoweb-domain: 'neperoz-cave.nekoweb.org'
-          nekoweb-username: 'neperoz-cave'
-          directory: 'dist'
+          nekoweb-domain: "/"
+          nekoweb-username: "neperoz-cave"
+          directory: "dist"
