@@ -1,0 +1,28 @@
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: deploy2nekoweb
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: deploy2nekoweb
+        uses: indiefellas/deploy2nekoweb@main
+        with:
+          nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
+          nekoweb-domain: 'neperoz-cave.nekoweb.org'
+          nekoweb-username: 'neperoz-cave'
+          directory: 'dist'
