@@ -17,6 +17,53 @@ const posts = (await getCollection("blog")).sort(
 <html lang="en">
   <head>
     <BaseHead title={"THE CAVE | BLOG"} description={SITE_DESCRIPTION} />
+    <style>
+      /* Stili specifici per rendere la lista pulita e retro-friendly */
+      .blog-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .blog-item {
+        margin-bottom: 12px;
+        padding: 10px;
+        border: 1px dashed var(--cream, #ccc);
+        background: rgba(255, 255, 255, 0.05); /* Un leggero sfondo */
+        border-radius: 4px;
+        transition: background 0.2s ease;
+      }
+      .blog-item:hover {
+        background: rgba(255, 185, 1, 0.1); /* Effetto hover col tuo giallo */
+        border-style: solid;
+      }
+      .blog-link {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 15px;
+      }
+      .blog-title {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+      .blog-date {
+        margin: 0;
+        font-size: 0.85rem;
+        font-family: monospace;
+        opacity: 0.8;
+        white-space: nowrap;
+      }
+      /* Se lo schermo è piccolo, metti la data sotto al titolo */
+      @media (max-width: 600px) {
+        .blog-link {
+          flex-direction: column;
+          gap: 5px;
+        }
+      }
+    </style>
   </head>
   <body>
     <Header />
@@ -40,9 +87,11 @@ const posts = (await getCollection("blog")).sort(
             </p>
           </div>
         </div>
-        <div class="window pink">
-          <div class="windowHeader">
-            <h1>HOW-I-DID-IT</h1>
+
+        <!-- NUOVA FINESTRA: ARCHIVIO DEL BLOG -->
+        <div class="window base" style="border-color: #a29bfe;">
+          <div class="windowHeader" style="background-color: #a29bfe;">
+            <h1>BLOG_ARCHIVE.EXE</h1>
             <span title="Minimize" class="winminimize"><span></span></span>
             <span title="Maximize" class="winmaximize"
               ><span></span><span></span></span
@@ -50,37 +99,31 @@ const posts = (await getCollection("blog")).sort(
             <span title="Close" class="winclose">x</span>
           </div>
           <div class="wincontent">
-            <h1>wip</h1>
+            <h2>my thoughts:</h2>
+            <br />
+
+            {
+              posts.length === 0 ? (
+                <p>
+                  <em>ancora nessun post... presto!</em>
+                </p>
+              ) : (
+                <ul class="blog-list">
+                  {posts.map((post) => (
+                    <li class="blog-item">
+                      <a href={`/blog/${post.id}/`} class="blog-link">
+                        <span class="blog-title">{post.data.title}</span>
+                        <span class="blog-date">
+                          [ <FormattedDate date={post.data.pubDate} /> ]
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )
+            }
           </div>
         </div>
-        {
-          posts.length === 0 ? (
-            <p>
-              <em>ancora nessun post... presto!</em>
-            </p>
-          ) : (
-            <ul class="post-list">
-              {posts.map((post) => (
-                <li>
-                  <a href={`/blog/${post.id}/`}>
-                    {post.data.heroImage && (
-                      <Image
-                        width={720}
-                        height={360}
-                        src={post.data.heroImage}
-                        alt=""
-                      />
-                    )}
-                    <h4 class="title">{post.data.title}</h4>
-                    <p class="date">
-                      <FormattedDate date={post.data.pubDate} />
-                    </p>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )
-        }
       </main>
     </container>
     <!--<Footer /> -->
