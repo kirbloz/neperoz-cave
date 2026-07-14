@@ -6,6 +6,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import "../styles/global.css";
 
 import Froggy from "../assets/images/froggy1024.png";
+
+import sona from "../assets/images/sona.jpg";
 ---
 
 <!doctype html>
@@ -21,6 +23,21 @@ import Froggy from "../assets/images/froggy1024.png";
       content="url(https://cur.cursors-4u.net/games/gam-12/gam1106.cur)"
     />
   </head>
+  <div class="h-card" hidden>
+    <div>
+      <p class="p-note">
+        you may refer to me as <a
+          href="https://neperoz-cave.nekoweb.org/about"
+          rel="me"
+          class="p-nickname u-url">neperoz</a
+        >, and i am currently embarked on a (hellish) journey of figuring out
+        university
+      </p>
+    </div>
+    <div>
+      <img id="sona" class="u-photo" src={sona.src} />
+    </div>
+  </div>
 
   <body style="display: block">
     <div
