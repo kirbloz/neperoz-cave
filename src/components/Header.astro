@@ -11,7 +11,85 @@ import HeaderLink from "./HeaderLink.astro";
 <header class="banner">
   <nav>
     <h3 class="title flex-title">
-      <a href="/" class="title-main">{SITE_TITLE}</a>
+      <a href="/" class="title-main"
+        ><!--{SITE_TITLE}-->
+        <!-- https://loveberry.nekoweb.org/resources/text -->
+        <style>
+          .tumblrwob {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            white-space: pre;
+            font-size: 1.2em;
+            font-family: JetBrains Mono;
+            margin-bottom: 4px;
+          }
+
+          .wobble:nth-child(4n + 1) {
+            -webkit-animation: tumblrwobble 4s ease-in-out -0.5s infinite;
+            animation: tumblrwobble 4s ease-in-out -0.5s infinite;
+          }
+
+          @keyframes tumblrwobble {
+            0% {
+              transform: translateY(5%) skew(3deg);
+            }
+            25% {
+              transform: translateY(-5%);
+            }
+            50% {
+              transform: translateY(5%) skew(-3deg);
+            }
+            75% {
+              transform: translateY(-5%);
+            }
+            to {
+              transform: translateY(5%) skew(3deg);
+            }
+          }
+
+          @-webkit-keyframes tumblrwobble {
+            0% {
+              transform: translateY(5%) skew(3deg);
+            }
+            25% {
+              transform: translateY(-5%);
+            }
+            50% {
+              transform: translateY(5%) skew(-3deg);
+            }
+            75% {
+              transform: translateY(-5%);
+            }
+            to {
+              transform: translateY(5%) skew(3deg);
+            }
+          }
+
+          .wobble:nth-child(4n + 2) {
+            -webkit-animation: tumblrwobble 4s ease-in-out -1s infinite;
+            animation: tumblrwobble 4s ease-in-out -1s infinite;
+          }
+
+          .wobble:nth-child(4n + 3) {
+            -webkit-animation: tumblrwobble 4s ease-in-out -1.5s infinite;
+            animation: tumblrwobble 4s ease-in-out -1.5s infinite;
+          }
+
+          .wobble:nth-child(4n) {
+            -webkit-animation: tumblrwobble 4s ease-in-out 0s infinite;
+            animation: tumblrwobble 4s ease-in-out 0s infinite;
+          }
+        </style>
+
+        <div class="tumblrwob">
+          <span class="wobble"> t</span><span class="wobble">h</span><span
+            class="wobble">e</span
+          ><span class="wobble">&nbsp;</span><span class="wobble">c</span><span
+            class="wobble">a</span
+          ><span class="wobble">v</span><span class="wobble">e</span>
+        </div>
+      </a>
       <span class="title-note">con furore da settembre '24</span>
     </h3>
     <div class="social-links">
