@@ -5,86 +5,32 @@ import { Image } from "astro:assets";
 import Warpstar from "../assets/images/warpstar.png";
 ---
 
-<style>
-  .navigator-bar {
-    display: flex;
-    flex:1;
-    flex-direction: row;
-
-    padding: 10px;
-    border: 2px dashed var(--orange);
-
-    /* optional: make it full width */
-    /*width: 100%;*/
-  }
-
-  .navigator-bar a {
-    flex:1;
-    text-align: : center;
-    display: block;
-    padding: 5px 10px;
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--fg-color);
-  }
-
-  .navigator-bar a:hover {
-    color: var(--gruv-yellow);
-  }
-
-  .navigator-bar.centered {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px;
-  }
-
-  .navigator-header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    background-color: var(--darker-bg-color);
-  padding: 5px 0px 5px 5px;
-  border: 2px solid var(--gruv-light-gray);
-  border-radius: 2px;
-  color: var(--almostwhite);
-  }
-
-  .navigator-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px; /* space between header and bar */
-    width: 100%;
-  }
-</style>
+<style></style>
 
 <!-- navigator bar -->
- <div class="navigator-wrapper">
-<div class="navigator-header">
-  <div>
-    <a href="/">
-      <Image
-        src={Warpstar}
-        id="kirby"
-        alt="Warp star, click to go home"
-        width={40}
-        height={40}
-      />
-    </a>
+<div class="navigator-wrapper">
+  <div class="navigator-header">
+    <div>
+      <a href="/">
+        <Image
+          src={Warpstar}
+          id="kirby"
+          alt="Warp star, click to go home"
+          width={40}
+          height={40}
+        />
+      </a>
+    </div>
+    <div>
+      <h1 class="h-subheader" style="padding-right:15px;">HOME</h1>
+    </div>
   </div>
-  <div>
-    <h1 class="h-subheader" style="padding-right:15px;">HOME</h1>
+  <div class="navigator-bar">
+    <a href="/about">ABOUT</a>
+    <a href="/blog">BLOG</a>
+    <a href="/weblog">WEBLOG</a>
+    <a href="/404.html">GALLERY</a>
+    <a href="/">ENTRY POINT</a>
   </div>
-
-</div>
-<div class="navigator-bar">
-  <a href="/about">ABOUT</a>
-  <a href="/blog">BLOG</a>
-  <a href="/weblog">WEBLOG</a>
-  <a href="/404">GALLERY</a>
-  <a href="/">ENTRY POINT</a>
-</div>
 </div>
 <div class="navspacer"><br /></div>

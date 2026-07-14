@@ -17,7 +17,13 @@ import NavigatorBox from "../components/NavigatorBox.astro";
   <NavigatorBox />
   <!-- buttonz -->
 
-  <marquee id="buttonz" scrollamount="3" direction="left" loop="infinite">
+  <!-- left marquee -->
+  <marquee
+    class="button-marquee"
+    scrollamount="3"
+    direction="left"
+    loop="infinite"
+  >
     <a href="https://nekoweb.org/">
       <Image
         src={NekoBorg}
@@ -48,20 +54,21 @@ import NavigatorBox from "../components/NavigatorBox.astro";
     </a>
   </marquee>
 
-  <div class="navspacer">
-    <br />
-  </div>
-  <marquee id="buttonz" scrollamount="3" direction="right" loop="infinite">
+  <!-- right marquee -->
+  <marquee
+    class="button-marquee"
+    scrollamount="3"
+    direction="right"
+    loop="infinite"
+  >
     <Image src={Arch} alt="ArchLinux user" />
     <Image src={NoChrome} alt="Against Chrome Web Browser" />
     <Image src={Dilbert} alt="Dilbert" />
   </marquee>
-  <div class="navspacer">
-    <br />
-  </div>
+
   <!-- BUTTONS -->
-  <div id="buttons-div">
-    <div class="sub-header" style="width:140px">
+  <div id="buttons-group">
+    <div class="sub-header header-friends">
       <div><h3 class="h-subheader">FRIENDS' SITES</h3></div>
     </div>
     <br />
@@ -69,12 +76,16 @@ import NavigatorBox from "../components/NavigatorBox.astro";
       <Image
         src={IgnesFatui}
         alt="friends button. the text IGNES-FATUI right next to the head of a smiling lamb. in the background there is a bunch of orange and yellow sparkles."
+        width={88}
+        height={31}
+        loading="lazy"
       /></a
     >
   </div>
-  <div class="navspacer"><br /></div>
-  <div id="buttons-div">
-    <div class="sub-header" style="width: 40px;">
+
+  <!-- mii -->
+  <div class="buttons-group">
+    <div class="sub-header header-mii">
       <div><h3 class="h-subheader">MII</h3></div>
     </div>
     <br />
@@ -83,19 +94,16 @@ import NavigatorBox from "../components/NavigatorBox.astro";
         src={ButtonNep}
         width={88}
         height={31}
+        loading="lazy"
         alt="neperoz cave button. blue handwritten text on yellow background saying
       'NEPEROZ' and a little kirby mounting a warp star."
       />
     </a>
   </div>
-  <div class="navspacer">
-    <br />
-  </div>
-  <div class="navspacer">
-    <br />
-  </div>
-  <!--<audio autoplay><source src=“https://bandcamp.com/EmbeddedPlayer/track=3350414577/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=small/transparent=true/” type=“audio/(mpeg, wav, or ogg)”></audio> -->
+
+  <!-- Bandcamp Player -->
   <div
+    class="player-container"
     set:html={`<iframe id="g-gendetta-player"
 style="border: 0; width: 100%; height: 120px;"
 src="https://bandcamp.com/EmbeddedPlayer/track=3350414577/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=small/transparent=true/"
@@ -106,3 +114,35 @@ src="https://bandcamp.com/EmbeddedPlayer/track=3350414577/size=large/bgcol=33333
     </a>
   </div>
 </aside>
+
+<style>
+  .sidebar {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .button-marquee {
+    display: block;
+  }
+
+  .buttons-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .header-friends {
+    width: 140px;
+  }
+
+  .header-mii {
+    width: 40px;
+  }
+
+  .player-container {
+    width: 100%;
+  }
+</style>
