@@ -98,13 +98,6 @@ body {
   border: 2px dashed var(--orange);
 }
 
-.navigation td {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: visible;
-}
-
 .navigation div {
   float: left;
 }
@@ -449,7 +442,7 @@ textarea {
   grid-area: header;
 
   background-color: var(--darker-bg-color);
-  padding: 5px 0px 5px 5px;
+  padding: 5px;
 
   border: 2px solid var(--gruv-light-gray);
   border-radius: 2px;
