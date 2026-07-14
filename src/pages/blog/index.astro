@@ -1,8 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import BaseHead from "../../components/BaseHead.astro";
-import Footer from "../../components/Footer.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Header from "../../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
@@ -17,53 +15,6 @@ const posts = (await getCollection("blog")).sort(
 <html lang="en">
   <head>
     <BaseHead title={"THE CAVE | BLOG"} description={SITE_DESCRIPTION} />
-    <style>
-      /* Stili specifici per rendere la lista pulita e retro-friendly */
-      .blog-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      .blog-item {
-        margin-bottom: 12px;
-        padding: 10px;
-        border: 1px dashed var(--cream, #ccc);
-        background: rgba(255, 255, 255, 0.05); /* Un leggero sfondo */
-        border-radius: 4px;
-        transition: background 0.2s ease;
-      }
-      .blog-item:hover {
-        background: rgba(255, 185, 1, 0.1); /* Effetto hover col tuo giallo */
-        border-style: solid;
-      }
-      .blog-link {
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 15px;
-      }
-      .blog-title {
-        margin: 0;
-        font-size: 1.1rem;
-        font-weight: bold;
-      }
-      .blog-date {
-        margin: 0;
-        font-size: 0.85rem;
-        font-family: monospace;
-        opacity: 0.8;
-        white-space: nowrap;
-      }
-      /* Se lo schermo è piccolo, metti la data sotto al titolo */
-      @media (max-width: 600px) {
-        .blog-link {
-          flex-direction: column;
-          gap: 5px;
-        }
-      }
-    </style>
   </head>
   <body>
     <Header />
@@ -88,8 +39,7 @@ const posts = (await getCollection("blog")).sort(
           </div>
         </div>
 
-        <!-- NUOVA FINESTRA: ARCHIVIO DEL BLOG -->
-        <div class="window base" style="border-color: #a29bfe;flex:1;">
+        <div class="window base" style="border-color: #a29bfe; width: 100%;">
           <div class="windowHeader" style="background-color: #a29bfe;">
             <h1>BLOG_ARCHIVE.EXE</h1>
             <span title="Minimize" class="winminimize"><span></span></span>
@@ -127,5 +77,63 @@ const posts = (await getCollection("blog")).sort(
       </main>
     </div>
     <!--<Footer /> -->
-  </body>
+  </body><style>
+    .blog-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .blog-item {
+      margin-bottom: 12px;
+      padding: 10px;
+      border: 1px dashed var(--cream, #ccc);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      transition: background 0.2s ease;
+    }
+    .blog-item:hover {
+      background: rgba(255, 185, 1, 0.1); /* Effetto hover col tuo giallo */
+      border-style: solid;
+    }
+    .blog-link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 15px;
+    }
+    .blog-title {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    .blog-date {
+      margin: 0;
+      font-size: 0.85rem;
+      font-family: monospace;
+      opacity: 0.8;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .blog-link {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      /* Usa :global() per "bucare" il componente NavigatorBar */
+      :global(.navigator-wrapper) {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 10px !important;
+      }
+
+      :global(.navigator-bar) {
+        flex-direction: column !important;
+        gap: 5px;
+        padding: 15px !important;
+      }
+    }
+  </style>
 </html>

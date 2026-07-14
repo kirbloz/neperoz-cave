@@ -1,7 +1,5 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Sidebar from "../components/Sidebar.astro";
-import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
@@ -23,7 +21,6 @@ function getImage(name: string) {
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Usiamo un titolo personalizzato per l'errore -->
     <BaseHead
       title={`404 NOT FOUND | ${SITE_TITLE}`}
       description={SITE_DESCRIPTION}
@@ -32,8 +29,8 @@ function getImage(name: string) {
   <body>
     <Header />
     <div class="container">
-      <main>
-        <div class="window base" style="border-color: #dc3545;">
+      <main style="width:100%;">
+        <div class="window base" style="border-color: #dc3545; width:100%;">
           <div
             class="windowHeader"
             style="background-color: #dc3545; border: 2px solid var(--cream);"
@@ -49,8 +46,8 @@ function getImage(name: string) {
             <span title="Close" class="winclose">x</span>
           </div>
           <div class="wincontent">
-            <h1>page not found!</h1>
-            <div style="display: flex; align-items: center; gap: 20px;">
+            <h1 style="font-size: clamp(20px, 5vw, 30px);">page not found!</h1>
+            <div class="error-layout">
               <div>
                 <p>
                   uh oh! it seems you've stumbled upon a broken link, or maybe
@@ -63,7 +60,6 @@ function getImage(name: string) {
                 </p>
               </div>
               <div>
-                <!-- Usiamo la GIF di kirby che aspira, come se avesse mangiato la pagina -->
                 <Image
                   src={getImage("kirbyinhaling2.gif")}
                   alt="Kirby inhaled this page"
@@ -73,16 +69,55 @@ function getImage(name: string) {
             <br />
             <hr />
             <br />
-            <div>
+            <div style="text-align: center;">
               <p>meanwhile, you can look at this dancing kirby:</p>
               <Image
                 src={getImage("kirbydance.gif")}
                 alt="Kirby dancing sprite"
+                style="max-width: 80px; height: auto;"
               />
             </div>
           </div>
         </div>
       </main>
     </div>
-  </body>
+  </body><style>
+    .window,
+    .wincontent,
+    .container,
+    main {
+      box-sizing: border-box;
+    }
+
+    .window {
+      max-width: 100% !important;
+    }
+    .error-layout {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .kirby-inhale {
+      max-width: 120px;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px !important;
+        width: 100% !important;
+        overflow-x: hidden;
+      }
+      .error-layout {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 15px;
+      }
+      .kirby-inhale {
+        max-width: 90px;
+      }
+    }
+  </style>
 </html>

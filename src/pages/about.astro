@@ -15,32 +15,12 @@ import Dwarf from "../assets/images/dwarf.png";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      #owl-tk {
-        float: center;
-        margin: 0 35px;
-        /*border: 2px solid var(--almostwhite);*/
-        border-radius: 5px;
-        width: 180px;
-        max-width: 100%;
-        max-height: 100%;
-        vertical-align: central;
-        position: relative;
-        object-fit: cover;
-        image-rendering: smooth;
-      }
-    </style>
   </head>
   <body>
     <Header />
     <div class="container">
       <Sidebar />
-
-      <!-- content boxes -->
-
-      <!-- windows?????? -->
-      <div id="main">
-        <!-- win one -->
+      <main>
         <div class="window base">
           <div class="windowHeader">
             <h1>✮ABT ME✮</h1>
@@ -56,17 +36,14 @@ import Dwarf from "../assets/images/dwarf.png";
 
           <div class="wincontent">
             <h1>wip</h1>
-
-            <div style="display: flex;">
-              <div style="max-width: 350px; justify-content: space-evenly; ">
+            <div class="profile-section">
+              <div style="flex:1;">
                 <p style="height: auto;">
                   here will go my interests and other personal stuff everybody
                   wanna know so bad (i see you microsoft)
                 </p>
-                <hr style="margin: 15px;" />
-                <p
-                  style="text-align: center; height: auto;vertical-align:center;"
-                >
+                <hr style="margin: 15px 0;" />
+                <p style="text-align: center;">
                   male, 23, white
                   <span id="trans-flag"></span>
                   <br />
@@ -75,16 +52,16 @@ import Dwarf from "../assets/images/dwarf.png";
                   6w5
                 </p>
               </div>
-              <div>
-                <a>
-                  <Image
-                    id="owl-tk"
-                    src={OwlTK}
-                    alt="owl from tokyo ghoul"
-                    width={180}
-                    height={180}
-                  />
-                </a>
+              <div
+                style="display: flex; align-items: center; justify-content: center;"
+              >
+                <Image
+                  id="owl-tk"
+                  src={OwlTK}
+                  alt="owl from tokyo ghoul"
+                  width={150}
+                  height={150}
+                />
               </div>
             </div>
           </div>
@@ -106,11 +83,12 @@ import Dwarf from "../assets/images/dwarf.png";
 
           <div class="wincontent">
             <div
-              style="display: flex; justify-content: space-evenly; padding-top: 5px; "
+              class="profile-section"
+              style="justify-content: space-evenly; padding-top: 5px;"
             >
-              <div style="text-align:center;">
+              <div style="text-align:center; flex: 1;">
                 <h3 style="color: var(--gruv-yellow)">HW</h3>
-                <p style="">
+                <p>
                   Aspire A715-42G
                   <br />
                   AMD Ryzen 7 5700U
@@ -120,7 +98,7 @@ import Dwarf from "../assets/images/dwarf.png";
                   16GB
                 </p>
               </div>
-              <div style="text-align:center;">
+              <div style="text-align:center flex:1;">
                 <h3 style="color: var(--gruv-yellow)">SW</h3>
                 <p>
                   <a
@@ -192,62 +170,98 @@ import Dwarf from "../assets/images/dwarf.png";
           </div>
 
           <div class="wincontent">
-            <li>
-              <ul>
-                <li>＋ reptiles, insects</li>
-              </ul>
-              <ul>
-                <div style="display: flex;">
-                  <div>
-                    ＋ videogames
-                    <br />
-                    <li>
-                      <ul>minecraft, dwarf fortress</ul>
-                      <ul>shapez.io, factorio, factory-sims in general</ul>
-                      <ul>kirby, outer wilds</ul>
-                      <ul>monster hunter world</ul>
-                    </li>
+            <ul style="padding-left: 15px; margin: 0; list-style-type: '＋ ';">
+              <li style="margin-bottom: 15px;">＋ reptiles, insects</li>
+
+              <li style="margin-bottom: 15px;">
+                ＋ videogames
+                <div class="games-section">
+                  <div style="flex: 1;">
+                    <ul style="list-style-type: '－ '; padding: 0px 15px;">
+                      <li>－ minecraft, dwarf fortress</li>
+                      <li>－ shapez.io, factorio, factory-sims</li>
+                      <li>－ kirby, outer wilds</li>
+                      <li>－ monster hunter world</li>
+                    </ul>
                   </div>
                   <div>
                     <a href="https://www.bay12games.com/dwarves/">
-                      <Image
-                        id="dwarf"
-                        style="float: center; margin: 0 35px; border: 2px solid var(--almostwhite); border-radius: 5px;"
-                        src={Dwarf}
-                        alt="Dwarf fortress logo"
-                      />
+                      <Image id="dwarf" src={Dwarf} alt="Dwarf fortress logo" />
                     </a>
                   </div>
                 </div>
-              </ul>
-              <ul>
-                ＋ anime, manga/manhwa/webcomics
-                <br />
-                <li>
-                  <ul>♲ stories i enjoy:</ul>
-                  <ul style="margin-left: 20px;">
-                    evangelion (normie), puella madoka magica, kill la kill, a
-                    certain scientific railgun, little witch academia, the
-                    melancholy of haruhi suzumiya, soul eater, tokyo ghoul:re,
-                    hardcore leveling warrior, hxh, shimanami tasogare, chainsaw
-                    man, dorohedoro, gachiakuta, fire punch, vagabond,
-                    omniscient reader's viewpoint, homestuck
-                  </ul>
-                  <ul>♲ characters i like:</ul>
-                  <ul style="margin-left: 20px;">
-                    kaneki ken, shinji ikari, kaiman, zanka nijiku, jolyne
-                    kuujou, hlw, angel devil, togata (fire punch)
-                  </ul>
-                </li>
-              </ul>
-              <ul>unhealthy ado obsession</ul>
-            </li>
-          </div>
+              </li>
 
-          <!-- win tech -->
+              <li style="margin-bottom: 15px;">
+                ＋ anime, manga/manhwa/webcomics
+
+                <ul
+                  style="list-style-type: '♲ '; padding-left: 15px; margin-top: 5px;"
+                >
+                  <li>
+                    ♲ stories i enjoy:
+                    <ul style="margin-left:5%;">
+                      <p style="font-size: 0.95rem; opacity: 0.9; ">
+                        evangelion (normie), puella madoka magica, kill la kill,
+                        a certain scientific railgun, little witch academia, the
+                        melancholy of haruhi suzumiya, soul eater, tokyo
+                        ghoul:re, hardcore leveling warrior, hxh, shimanami
+                        tasogare, chainsaw man, dorohedoro, gachiakuta, fire
+                        punch, vagabond, omniscient reader's viewpoint,
+                        homestuck
+                      </p>
+                    </ul>
+                  </li>
+                  <li style="margin-top: 5px;">
+                    <li>
+                      ♲ characters i like:
+                      <ul style="margin-left:5%;">
+                        <p style="font-size: 0.95rem; opacity: 0.9; ">
+                          kaneki ken, shinji ikari, kaiman, zanka nijiku, jolyne
+                          kuujou, hlw, angel devil, togata (fire punch)
+                        </p>
+                      </ul>
+                    </li>
+                  </li>
+                </ul>
+              </li>
+              <ul>＋ unhealthy ado obsession</ul>
+
+              <!-- win tech -->
+            </ul>
+            <!-- no more windows???? -->
+          </div>
         </div>
-        <!-- no more windows???? -->
-      </div>
+      </main>
     </div>
-  </body>
+  </body><style>
+    #owl-tk {
+      display: block;
+      margin: 10px auto;
+      border-radius: 5px;
+      width: 150px;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .profile-section {
+      display: flex;
+      gap: 20px;
+    }
+
+    .games-section {
+      display: flex;
+      gap: 15px;
+    }
+
+    #dwarf {
+      margin: 10px auto;
+      border: 2px solid var(--almostwhite);
+      border-radius: 5px;
+      max-width: 120px;
+      height: auto;
+      display: block;
+    }
+  </style>
 </html>
