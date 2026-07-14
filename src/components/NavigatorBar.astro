@@ -1,11 +1,7 @@
 ---
-import "../styles/global.css";
 import { Image } from "astro:assets";
-
 import Warpstar from "../assets/images/warpstar.png";
 ---
-
-<style></style>
 
 <!-- navigator bar -->
 <div class="navigator-wrapper">
@@ -34,3 +30,41 @@ import Warpstar from "../assets/images/warpstar.png";
   </div>
 </div>
 <div class="navspacer"><br /></div>
+
+<style>
+  .navigator-wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    display: flex;
+  }
+  .navigator-header {
+    background-color: var(--darker-bg-color);
+    border: 2px solid var(--gruv-light-gray);
+    color: var(--almostwhite);
+    border-radius: 2px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0 5px 5px;
+    display: flex;
+  }
+
+  .navigator-bar {
+    border: 2px dashed var(--orange);
+    flex-direction: row;
+    flex: 1;
+    padding: 10px;
+    display: flex;
+  }
+  .navigator-bar > a {
+    color: var(--fg-color);
+    flex: 1;
+    padding: 5px 10px;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+    display: block;
+  }
+</style>
