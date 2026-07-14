@@ -7,6 +7,7 @@ import Sidebar from "../../components/Sidebar.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Header from "../../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import NavigatorBar from "../../components/NavigatorBar.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -67,9 +68,9 @@ const posts = (await getCollection("blog")).sort(
   </head>
   <body>
     <Header />
-    <container>
-      <Sidebar />
-      <main>
+    <div class="container">
+      <main style="display:flex; flex-direction:column;">
+        <NavigatorBar />
         <div class="window base">
           <div class="windowHeader">
             <h1>✉ MAIN.EXE ✉</h1>
@@ -89,7 +90,7 @@ const posts = (await getCollection("blog")).sort(
         </div>
 
         <!-- NUOVA FINESTRA: ARCHIVIO DEL BLOG -->
-        <div class="window base" style="border-color: #a29bfe;">
+        <div class="window base" style="border-color: #a29bfe;flex:1;">
           <div class="windowHeader" style="background-color: #a29bfe;">
             <h1>BLOG_ARCHIVE.EXE</h1>
             <span title="Minimize" class="winminimize"><span></span></span>
@@ -125,7 +126,7 @@ const posts = (await getCollection("blog")).sort(
           </div>
         </div>
       </main>
-    </container>
+    </div>
     <!--<Footer /> -->
   </body>
 </html>

@@ -97,11 +97,17 @@ body {
   /*image-rendering: pixelated;*/
 }
 
-container {
+.container {
   display: flex;
   padding: 50px;
+  align-items: flex-start;
   flex-direction: row;
   gap: 50px;
+}
+.container > aside,
+.container > .sidebar {
+  width: 250px; /* or whatever width you want */
+  flex-shrink: 0; /* prevents sidebar from shrinking */
 }
 
 /* main table where everything goes. first column is navigator and second column is actual boxes w content*/
@@ -671,6 +677,7 @@ note > h4 {
 /****************template***********************/
 
 main {
+  flex: 1;
   width: 720px;
   max-width: calc(100% - 2em);
   margin: auto;

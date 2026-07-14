@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import { Image } from "astro:assets";
-import Warpstar from "../assets/images/warpstar.png";
+
 import NekoBorg from "../assets/images/nekoweborg004.gif";
 import Snipchu from "../assets/images/snipchu.gif";
 import ButtonNep from "../assets/images/nep-button-kirby.png";
@@ -9,44 +9,12 @@ import IgnesFatui from "../assets/images/ignes-fatui.gif";
 import Arch from "../assets/images/arch.png";
 import NoChrome from "../assets/images/nochrome.gif";
 import Dilbert from "../assets/images/dilbert.gif";
+import NavigatorBox from "../components/NavigatorBox.astro";
 ---
 
-<!-- src/components/Sidebar.astro --><!-- navigator box -->
-<div id="side">
-  <div class="header">
-    <div>
-      <a href="/">
-        <Image
-          src={Warpstar}
-          id="kirby"
-          alt="Warp star, click to go home"
-          width={40}
-          height={40}
-        />
-      </a>
-    </div>
-    <div>
-      <h1 class="h-subheader">HOME</h1>
-    </div>
-    <div>|</div>
-    <div><h2>CIRCUITS??</h2></div>
-  </div>
-  <div class="navspacer"><br /></div>
-  <div class="navigation">
-    <div>
-      <a href="/about">ABOUT</a>
-    </div>
-    <div>
-      <a href="/blog">BLOG</a>
-    </div>
-    <div>
-      <a href="/weblog">WEBLOG</a>
-    </div>
-    <div>
-      <a href="/">ENTRY POINT</a>
-    </div>
-  </div>
-  <div class="navspacer"><br /></div>
+<aside class="sidebar">
+  <!-- src/components/Sidebar.astro -->
+  <NavigatorBox />
   <!-- buttonz -->
 
   <marquee id="buttonz" scrollamount="3" direction="left" loop="infinite">
@@ -127,13 +95,14 @@ import Dilbert from "../assets/images/dilbert.gif";
     <br />
   </div>
   <!--<audio autoplay><source src=“https://bandcamp.com/EmbeddedPlayer/track=3350414577/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=small/transparent=true/” type=“audio/(mpeg, wav, or ogg)”></audio> -->
-  <iframe
-    id="g-gendetta-player"
-    style="border: 0; width: 100%; height: 120px;"
-    src="https://bandcamp.com/EmbeddedPlayer/track=3350414577/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=small/transparent=true/"
-    seamless
+  <div
+    set:html={`<iframe id="g-gendetta-player"
+style="border: 0; width: 100%; height: 120px;"
+src="https://bandcamp.com/EmbeddedPlayer/track=3350414577/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=small/transparent=true/"
+></iframe>`}
   >
-    <a href="https://cheapdirtyhorseband.bandcamp.com/track/g-for-gendetta" > G
-    for Gendetta by Cheap Dirty Horse </a>
-  </iframe>
-</div>
+    <a href="https://cheapdirtyhorseband.bandcamp.com/track/g-for-gendetta">
+      G for Gendetta by Cheap Dirty Horse
+    </a>
+  </div>
+</aside>

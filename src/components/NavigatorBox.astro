@@ -1,0 +1,47 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+
+import Warpstar from "../assets/images/warpstar.png";
+---
+
+<!-- navigator box -->
+<div id="side">
+  <div class="header">
+    <div>
+      <a href="/">
+        <Image
+          src={Warpstar}
+          id="kirby"
+          alt="Warp star, click to go home"
+          width={40}
+          height={40}
+        />
+      </a>
+    </div>
+    <div>
+      <h1 class="h-subheader">HOME</h1>
+    </div>
+    <div>|</div>
+    <div><h2>CIRCUITS??</h2></div>
+  </div>
+  <div class="navspacer"><br /></div>
+  <div class="navigation">
+    <div>
+      <a href="/about">ABOUT</a>
+    </div>
+    <div>
+      <a href="/blog">BLOG</a>
+    </div>
+    <div>
+      <a href="/weblog">WEBLOG</a>
+    </div>
+    <div>
+      <a href="/404">GALLERY</a>
+    </div>
+    <div>
+      <a href="/">ENTRY POINT</a>
+    </div>
+  </div>
+  <div class="navspacer"><br /></div>
+</div>
