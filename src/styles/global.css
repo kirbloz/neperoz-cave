@@ -440,6 +440,12 @@ p {
   line-height: 19px;
   margin-top: 0px;
   margin-bottom: 10px;
+  color: var(--almostwhite);
+}
+
+a {
+  color: var(--almostwhite);
+  font-style: italic;
 }
 
 h1 {
