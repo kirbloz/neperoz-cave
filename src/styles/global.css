@@ -101,7 +101,7 @@ body {
   display: flex;
   padding: 50px;
   align-items: flex-start;
-  flex-direction: row;
+  /*flex-direction: row;*/
   gap: 50px;
 }
 .container > aside,
@@ -677,6 +677,8 @@ note > h4 {
 /****************template***********************/
 
 main {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   width: 720px;
   max-width: calc(100% - 2em);
