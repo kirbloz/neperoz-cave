@@ -17,7 +17,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       <!-- content boxes -->
 
       <!-- windows?????? -->
-      <main>
+      <main style="display:flex; flex-direction:column; align-items:center;">
         <note style="">
           <div class="lines" style="flex:1;"></div>
 
@@ -39,9 +39,33 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
         </note>
 
         <div class="navspacer"><br /></div>
-      </main>
 
-      <!-- no more windows???? -->
+        <div class="window pink" style="max-width: 30%;">
+          <div class="windowHeader">
+            <h1>🗁 source code 🗁</h1>
+            <span title="Minimize" class="winminimize">
+              <span></span>
+            </span>
+            <span title="Maximize" class="winmaximize">
+              <span></span>
+              <span></span>
+            </span>
+            <span title="Close" class="winclose">x</span>
+          </div>
+          <div class="wincontent" style="">
+            <p>this website is currently uhh v2.0</p>
+            <p>
+              you can find everything <a
+                href="https://github.com/kirbloz/neperoz-cave">on my github</a
+              >
+            </p>
+            <br />
+            <p style="text-align:center;">▌║█║▌│║▌│║▌║▌█║▌│║▌║▌│║║▌█║▌║█</p>
+          </div>
+        </div>
+
+        <!-- no more windows???? -->
+      </main>
     </div>
   </body>
 </html>
