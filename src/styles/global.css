@@ -266,6 +266,26 @@ body {
   color: var(--almostwhite);
 }
 
+/* ORANGE THEME */
+
+.window.orangee > .windowHeader {
+  background: #d76c4f /*var(--gruv-dark-orange)*/;
+  border: 2px solid var(--gruv-orange);
+}
+
+.window.orangee .wincontent {
+  border: 2px solid var(--gruv-orange);
+  border-top: 0px solid;
+
+  /* default */
+  color: var(--almostwhite);
+}
+
+.window.orangee .wincontent a {
+  /* default */
+  color: var(--almostwhite);
+}
+
 /* blue theme */
 .window.blue > .windowHeader {
   background-color: var(--gruv-blue);
