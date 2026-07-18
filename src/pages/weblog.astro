@@ -1,14 +1,23 @@
 ---
+import { Image } from "astro:assets";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
+import NotAI from "../assets/images/not-AI.png";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Chiikawa - https://www.cursors-4u.com/cursor/chiikawa -->
+
+    <!-- End www.Cursors-4U.com Code -->
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <link
+      rel="stylesheet"
+      href="https://cdn.cursors-4u.net/cursors/animated/chiikawa-88aad27d-48.css"
+    />
   </head>
   <body>
     <Header />
@@ -68,37 +77,53 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
             >
               ▌║█║▌│║▌│║▌║▌█║▌│║▌║▌│║║▌█║▌║█
             </p>
+            <p style="text-align:center;">
+              <a href="https://notbyai.fyi/"
+                ><Image
+                  src={NotAI}
+                  alt="Created by a Human not by AI badge"
+                  loading="lazy"
+                  decoding="async"
+                /></a
+              >
+              <!-- <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                <img
+                  style="border:0;width:88px;height:31px"
+                  src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                  alt="Valid CSS!"
+                />-->
+            </p>
           </div>
         </div>
-
-        <div class="window orangee" style="width: 100%; max-width: 450px; ">
-          <div class="windowHeader">
-            <h1>more webringz worki in progress</h1>
-            <span title="Minimize" class="winminimize">
-              <span></span>
-            </span>
-            <span title="Maximize" class="winmaximize">
-              <span></span>
-              <span></span>
-            </span>
-            <span title="Close" class="winclose">x</span>
-          </div>
-          <div class="wincontent" style="">
-            <div id="gfdkris">
-              <script
-                type="text/javascript"
-                src="https://fabstarotcorner.neocities.org/webring/onionring-variables.js"
-              ></script>
-              <script
-                type="text/javascript"
-                src="https://fabstarotcorner.neocities.org/webring/onionring-widget.js"
-              ></script>
-            </div>
-          </div>
-        </div>
-
-        <!-- no more windows???? -->
       </main>
+
+      <div class="window orangee" style="width: 100%; max-width: 450px; ">
+        <div class="windowHeader">
+          <h1>more webringz worki in progress</h1>
+          <span title="Minimize" class="winminimize">
+            <span></span>
+          </span>
+          <span title="Maximize" class="winmaximize">
+            <span></span>
+            <span></span>
+          </span>
+          <span title="Close" class="winclose">x</span>
+        </div>
+        <div class="wincontent" style="">
+          <div id="gfdkris">
+            <script
+              type="text/javascript"
+              src="https://fabstarotcorner.neocities.org/webring/onionring-variables.js"
+            ></script>
+            <script
+              type="text/javascript"
+              src="https://fabstarotcorner.neocities.org/webring/onionring-widget.js"
+            ></script>
+          </div>
+        </div>
+      </div>
+
+      <!-- no more windows???? -->
     </div>
   </body><style is:global>
     /* - - - - - - - - notepad theme - - - - - - - - - - - */
