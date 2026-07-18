@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  // raccogli tutte le tag
+  const allTags = new Set(posts.flatMap((post) => post.data.tags ?? []));
+
+  return [...allTags].map((tag) => ({
+    params: { tag },
+  }));
+}
+
+const { tag } = Astro.params;
+const posts = (await getCollection("blog")).filter((post) =>
+  post.data.tags?.includes(tag),
+);
+---
+
+<html lang="en">
+  <head> <title>Posts tagged "{tag}</title></head>"
+
+  <body>
+    <h1>Tag: {tag}</h1>
+
+    {posts.length === 0 && <p>Nessun post trovato.</p>}
+
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </body>
+</html>
