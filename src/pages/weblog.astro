@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import Sidebar from "../components/Sidebar.astro";
 import NotAI from "../assets/images/not-AI.png";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
@@ -10,188 +11,158 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Chiikawa - https://www.cursors-4u.com/cursor/chiikawa -->
-
-    <!-- End www.Cursors-4U.com Code -->
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <!-- Chiikawa - https://www.cursors-4u.com/cursor/chiikawa -->
     <link
       rel="stylesheet"
       href="https://cdn.cursors-4u.net/cursors/animated/chiikawa-88aad27d-48.css"
     />
+    <!-- End www.Cursors-4U.com Code -->
   </head>
   <body>
     <Header />
     <div class="container">
       <Sidebar />
-      <main
-        style="display:flex; flex-direction:column; align-items:center; width:100%;"
-      >
-        <note style="">
-          <div class="lines"></div>
+      <main>
+        <div class="weblog-column">
+          <note>
+            <div class="lines"></div>
 
-          <ul class="list">
-            <li><span>dev to do:</span></li>
-            <li>☒ add hardware and software specs</li>
-            <li>
-              <tmp style="text-decoration:line-through">☐ add visitor count</tmp
-              > that did not work
-            </li>
-            <li>☐ figure out webrings</li>
-            <li>
-              ☒ organize css styling for window-like divs -&gt; done as for sept
-              29th!
-            </li>
-            <li>☐ optimize for mobile</li>
-            <li>☐ add more buttons!!!!</li>
-            <li>☐ design a more serious button</li>
-            <li>☐ add music player/last played song</li>
-            <li>☐ add embed sans fight simulator</li>
-            <li>☐ implement gallery/archive</li>
-          </ul>
-        </note>
-
-        <div class="navspacer"><br /></div>
-
-        <div class="window pink" style="width: 100%; max-width: 450px;">
-          <div class="windowHeader">
-            <h1>🗁 source code 🗁</h1>
-            <span title="Minimize" class="winminimize">
-              <span></span>
-            </span>
-            <span title="Maximize" class="winmaximize">
-              <span></span>
-              <span></span>
-            </span>
-            <span title="Close" class="winclose">x</span>
-          </div>
-          <div class="wincontent" style="">
-            <p>this website is currently uhh v2.0</p>
-            <p>
-              you can find everything <a
-                href="https://github.com/kirbloz/neperoz-cave">on my github</a
+            <ul class="list">
+              <li><span>dev to do:</span></li>
+              <li>☒ add hardware and software specs</li>
+              <li>
+                <tmp style="text-decoration:line-through"
+                  >☐ add visitor count</tmp
+                > that did not work
+              </li>
+              <li>☒ figure out webrings</li>
+              <li>
+                ☒ organize css styling for window-like divs -&gt; done as for
+                sept 29th!
+              </li>
+              <li>☐ optimize for mobile (kinda started)</li>
+              <li>☒ add more buttons!!!!</li>
+              <li>☐ design a more serious button</li>
+              <li>☐ add music player/last played song</li>
+              <li>☐ add embed sans fight simulator</li>
+              <li>☐ implement gallery/archive/resources</li>
+              <li>☐ implement links page</li>
+              <li>☐ add a shrine to punk culture</li>
+            </ul>
+          </note>
+        </div>
+        <div class="weblog-column">
+          <div class="window pink" style="width: 100%; max-width: 450px;">
+            <div class="windowHeader">
+              <h1>🗁 source code 🗁</h1>
+              <span title="Minimize" class="winminimize">
+                <span></span>
+              </span>
+              <span title="Maximize" class="winmaximize">
+                <span></span>
+                <span></span>
+              </span>
+              <span title="Close" class="winclose">x</span>
+            </div>
+            <div class="wincontent" style="">
+              <p>this website is currently uhh v2.0</p>
+              <p>
+                + you can find everything <a
+                  href="https://github.com/kirbloz/neperoz-cave">on my github</a
+                >
+                <p>
+                  + made by paw on <a href="https://vscodium.dev/">vscodium</a>
+                </p>
+              </p>
+              <br />
+              <p
+                style="text-align:center;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"
               >
-            </p>
-            <br />
-            <p
-              style="text-align:center;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"
-            >
-              ▌║█║▌│║▌│║▌║▌█║▌│║▌║▌│║║▌█║▌║█
-            </p>
-            <p style="text-align:center;">
-              <a href="https://notbyai.fyi/"
-                ><Image
-                  src={NotAI}
-                  alt="Created by a Human not by AI badge"
-                  loading="lazy"
-                  decoding="async"
-                /></a
-              >
-              <!-- <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                ▌║█║▌│║▌│║▌║▌█║▌│║▌║▌│║║▌█║▌║█
+              </p>
+              <p style="text-align:center;">
+                <a href="https://notbyai.fyi/"
+                  ><Image
+                    src={NotAI}
+                    alt="Created by a Human not by AI badge"
+                    loading="lazy"
+                    decoding="async"
+                  /></a
+                >
+                <!-- <a href="https://jigsaw.w3.org/css-validator/check/referer">
                 <img
                   style="border:0;width:88px;height:31px"
                   src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
                   alt="Valid CSS!"
                 />-->
-            </p>
+              </p>
+            </div>
+          </div>
+
+          <div class="window orangee">
+            <div class="windowHeader">
+              <h1>more webringz worki in progress</h1>
+              <span title="Minimize" class="winminimize">
+                <span></span>
+              </span>
+              <span title="Maximize" class="winmaximize">
+                <span></span>
+                <span></span>
+              </span>
+              <span title="Close" class="winclose">x</span>
+            </div>
+            <div id="webrings-win" class="wincontent">
+              <div id="gfdkris">
+                <script
+                  type="text/javascript"
+                  src="https://fabstarotcorner.neocities.org/webring/onionring-variables.js"
+                ></script>
+                <script
+                  type="text/javascript"
+                  src="https://fabstarotcorner.neocities.org/webring/onionring-widget.js"
+                ></script>
+                <div id="MHfanring">
+                  <script
+                    type="text/javascript"
+                    src="https://tesseractcube.neocities.org/rehaul/webring/onionring-variables.js"
+                  ></script>
+                  <script
+                    type="text/javascript"
+                    src="https://tesseractcube.neocities.org/rehaul/webring/onionring-widget3.js"
+                  ></script>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <!-- no more windows???? -->
       </main>
-
-      <div class="window orangee" style="width: 100%; max-width: 450px; ">
-        <div class="windowHeader">
-          <h1>more webringz worki in progress</h1>
-          <span title="Minimize" class="winminimize">
-            <span></span>
-          </span>
-          <span title="Maximize" class="winmaximize">
-            <span></span>
-            <span></span>
-          </span>
-          <span title="Close" class="winclose">x</span>
-        </div>
-        <div class="wincontent" style="">
-          <div id="gfdkris">
-            <script
-              type="text/javascript"
-              src="https://fabstarotcorner.neocities.org/webring/onionring-variables.js"
-            ></script>
-            <script
-              type="text/javascript"
-              src="https://fabstarotcorner.neocities.org/webring/onionring-widget.js"
-            ></script>
-          </div>
-        </div>
-      </div>
-
-      <!-- no more windows???? -->
     </div>
-  </body><style is:global>
-    /* - - - - - - - - notepad theme - - - - - - - - - - - */
-    /* https://css-tricks.com/how-to-create-a-notebook-design-with-css/ */
-    note {
-      background-color: var(--cream);
+    <Footer />
+  </body><style>
+    main {
+      display: flex;
+      flex-direction: flex-start;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      padding-left: auto;
+      padding-right: 5%;
+      flex-wrap: wrap;
+    }
+    main > * {
       max-width: 500px;
-      width: 100%;
-      width: auto;
-      margin: 0 auto;
-      padding: 0;
-      position: relative;
-      box-sizing: border-box;
+    }
+    #webrings-win {
+      max-height: 300;
+      overflow: scroll;
+      scroll-behavior: smooth;
+      scrollbar-color: var(--gruv-orange);
     }
 
-    note > h4 {
-      color: #cd0000;
-      font-size: clamp(28px, 6vw, 42px);
-      letter-spacing: -2px;
-      text-align: left;
-    }
-
-    .list {
-      color: #555;
-      font-size: 16px;
-      padding: 0 !important;
-      width: 100%;
-      font-family: courier, monospace;
-      border: 1px solid #dedede;
-      box-sizing: border-box;
-    }
-
-    .list li {
-      list-style: none;
-      border-bottom: 1px dotted #ccc;
-      text-indent: -15px;
-      height: auto;
-      padding: 10px 10px 10px 50px;
-      text-transform: capitalize;
-      word-break: break-word;
-    }
-
-    .list li:hover {
-      background-color: #f9f1af;
-      transition: all 0.2s;
-    }
-    .lines {
-      border-left: 1px solid #ffaa9f;
-      border-right: 1px solid #ffaa9f;
-      width: 2px;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 40px;
-      pointer-events: none;
-    }
-    .source-window {
-      width: 100%;
-      max-width: 450px;
-    }
-
-    @media (max-width: 768px) {
-      .lines {
-        left: 30px;
-      }
-      .list li {
-        padding-left: 60px;
-      }
+    .weblog-column {
+      flex-grow: 1;
     }
   </style>
 </html>
