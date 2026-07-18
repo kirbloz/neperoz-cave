@@ -10,7 +10,6 @@
 :root {
   --bg-color: #282828;
   --darker-bg-color: #1d2021;
-
   --lighter-bg-color: #3c3836;
   --fg-color: #ebdbb2;
   --darker-fg-color: #d5c4a1;
@@ -215,7 +214,7 @@ body {
 .wincontent {
   padding: 20px;
   box-sizing: border-box;
-  text-wrap: normal;
+  text-wrap: wrap;
   min-width: var(--min-dim-main);
   min-height: 140px;
 }
@@ -584,7 +583,7 @@ note > h4 {
   height: auto;
   padding: 10px 10px 10px 50px;
   text-transform: capitalize;
-  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .list li:hover {
