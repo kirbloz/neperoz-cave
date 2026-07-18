@@ -127,9 +127,13 @@ import "/src/styles/global.css";
   .banner {
     display: flex;
     height: 80px;
+
+    margin-bottom: 50px;
+
     background-size: 100%;
     background-color: var(--bg-color);
     align-content: center;
+
     image-rendering: auto;
     position: relative;
   }
@@ -142,11 +146,28 @@ import "/src/styles/global.css";
     padding: 0 1em;
   }
 
+  #bannerauthor {
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
+    font-size: 12px;
+    color: var(--background-color);
+    background-color: #ffffffb0;
+    padding: 1px 4px;
+  }
+
+  #bannerauthor > a {
+    color: var(--gruv-dark-purple);
+  }
+
   .title {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
     margin: 0;
+
+    border-bottom: 1px solid #ccc;
+    max-width: 500px;
   }
 
   .title-main {
@@ -162,6 +183,23 @@ import "/src/styles/global.css";
     color: var(--gruv-light-gray);
     white-space: nowrap;
     margin-left: 0.5em;
+    color: #999;
+  }
+
+  .flex-title {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .flex-title,
+  .flex-title span {
+    white-space: nowrap;
+  }
+  .flex-title,
+  .title-main {
+    flex-grow: 1;
+    color: var(--almostwhite);
   }
 
   .internal-links a {
