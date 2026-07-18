@@ -12,6 +12,7 @@
   --darker-bg-color: #1d2021;
   --lighter-bg-color: #3c3836;
   --fg-color: #ebdbb2;
+
   --darker-fg-color: #d5c4a1;
   --lighter-fg-color: #fbf1c7;
   --gruv-red: #fb4934;
@@ -70,24 +71,31 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
+  display: flex;
   overflow-x: hidden;
+  flex-direction: column;
   background-image: url("/src/assets/images/stars5.gif");
-  min-height: 100vh;
+  min-height: 100dvh;
   height: 100%;
 }
 
 .container {
+  flex: 1 0 auto;
+  margin-top: 50px;
   display: flex;
   width: 80%;
   margin: auto;
-  padding: 50px;
+  /*padding: 50px;*/
   align-items: flex-start;
-  gap: 50px;
+  gap: 30px;
 }
+
 .container > aside,
 .container > .sidebar {
   width: 250px; /* or whatever width you want */
   flex-shrink: 0; /* prevents sidebar from shrinking */
+  justify-content: flex-start;
 }
 
 /* - - - - navigation bar - - - - */
@@ -96,11 +104,7 @@ body {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  border: 3px dashed var(--orange);
-}
-
-.navigation div {
-  float: left;
+  border: 2px dashed var(--orange);
 }
 
 .navigation div:first-child {
@@ -111,6 +115,7 @@ body {
   border-right: none;
 }
 
+.navigator-bar div a,
 .navigation div a {
   display: block;
   height: 20px;
@@ -122,6 +127,7 @@ body {
   color: var(--fg-color);
 }
 
+.navigator-bar div a:hover,
 .navigation div a:hover {
   color: var(--gruv-yellow);
 }
@@ -330,29 +336,6 @@ body {
 
 /* snippets from https://candywolf.neocities.org/ */
 
-#main {
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-  align-items: flex-start;
-  flex: 1 0 auto;
-
-  width: 720px;
-  max-width: calc(100% - 2em);
-  padding: 3em 1em;
-  gap: 50px;
-}
-
-/*main {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  width: 720px;
-  max-width: calc(100% - 2em);
-  margin: auto;
-  padding: 3em 1em;
-}*/
 /* sona icon on the homepage first window */
 #sona {
   margin: 0 35px;
@@ -514,56 +497,7 @@ textarea {
 
 /* idk man i copied these snippets around */
 
-.title {
-  border-bottom: 1px solid #ccc;
-  max-width: 500px;
-  margin: auto;
-}
-.title-note {
-  font-size: 60%;
-  color: #999;
-}
-.flex-title {
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-}
-
-.flex-title,
-.flex-title span {
-  white-space: nowrap;
-}
-.flex-title,
-.title-main {
-  flex-grow: 1;
-  color: var(--almostwhite);
-}
-
-.banner {
-  display: flex;
-  height: 80px;
-
-  background-size: 100%;
-  background-color: var(--bg-color);
-  align-content: center;
-
-  image-rendering: auto;
-  position: relative;
-}
-
-#bannerauthor {
-  position: absolute;
-  left: 6px;
-  bottom: 6px;
-  font-size: 12px;
-  color: var(--background-color);
-  background-color: #ffffffb0;
-  padding: 1px 4px;
-}
-
-#bannerauthor > a {
-  color: var(--gruv-dark-purple);
-}
+/* banner style has been moved to header.astro */
 
 /* - - - - footer elements - - - - */
 
@@ -606,7 +540,7 @@ footer {
   color: inherit;
 }
 .status-mid {
-  color: var(---lighter-bg-color);
+  color: var(--lighter-bg-color);
   background-color: var(--darker-fg-color);
 }
 .status-low {
@@ -722,7 +656,7 @@ note > h4 {
   white-space: nowrap;
 }
 
-/* ******blog********* */
+/* ****** blog ********* */
 .post-tags {
   margin: 0.5rem 0 !important;
 }
@@ -739,12 +673,6 @@ note > h4 {
 /*
 ============== MOBILE STUFF ==================
 */
-
-@media (min-height: 1400px) {
-  .container {
-    min-height: 1400px;
-  }
-}
 
 @media (max-width: 768px) {
   .container {
@@ -787,5 +715,17 @@ note > h4 {
     max-width: 70px;
     height: auto;
     margin: 4px;
+  }
+  @media (max-width: 600px) {
+    .bar {
+      flex-flow: column nowrap; /* impila left/right verticalmente su schermi piccoli */
+      align-items: stretch;
+    }
+
+    .bar .left,
+    .bar .right {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
   }
 }

@@ -22,19 +22,24 @@ import Warpstar from "../assets/images/warpstar.png";
     </div>
   </div>
   <div class="navigator-bar">
-    <a href="/about">ABOUT</a>
-    <a href="/blog">BLOG</a>
-    <a href="/weblog">WEBLOG</a>
-    <a href="/404.html">GALLERY</a>
-    <a href="https://neperoz-cave.atabook.org/">GUESTBOOK</a>
-    <a href="/">ENTRY POINT</a>
+    <div><a href="/about">ABOUT</a></div>
+
+    <div><a href="/blog">BLOG</a></div>
+
+    <div><a href="/weblog">WEBLOG</a></div>
+
+    <div><a href="/404.html">GALLERY</a></div>
+
+    <div><a href="https://neperoz-cave.atabook.org/">GUESTBOOK</a></div>
+
+    <div><a href="/">ENTRY POINT</a></div>
   </div>
 </div>
 
 <style>
   .navigator-wrapper {
     flex-direction: row;
-    align-items: center;
+    align-items: center !important;
     gap: 20px;
     width: 100%;
     display: flex;
@@ -45,9 +50,8 @@ import Warpstar from "../assets/images/warpstar.png";
     color: var(--almostwhite);
     border-radius: 2px;
     flex-direction: row;
-    align-items: center;
     gap: 10px;
-    padding: 5px 0 5px 5px;
+    padding: 5px 0 5px 10px;
     display: flex;
   }
 
@@ -55,16 +59,17 @@ import Warpstar from "../assets/images/warpstar.png";
     border: 2px dashed var(--orange);
     flex-direction: row;
     flex: 1;
-    padding: 10px;
-    display: flex;
-  }
-  .navigator-bar > a {
-    color: var(--fg-color);
-    flex: 1;
     padding: 5px 10px;
-    font-weight: 700;
-    text-decoration: none;
-    font-style: normal;
-    display: block;
+    padding-top: 7px;
+    display: flex;
+    align-items: center;
+  }
+  .navigator-bar div {
+    flex-grow: 1;
+  }
+
+  .navigator-bar > a {
+    flex: 1;
+    display: inline;
   }
 </style>
