@@ -582,6 +582,20 @@ span {
   white-space: nowrap;
 }
 
+/* ******blog********* */
+.post-tags {
+  margin: 0.5rem 0 !important;
+}
+
+.tag {
+  background: var(--darker-bg-color);
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-right: 6px;
+  color: var(--gruv-aqua) !important;
+  font-size: 0.8em;
+}
+
 /*
 ============== MOBILE STUFF ==================
 */
