@@ -9,6 +9,10 @@ import NavigatorBar from "../../components/NavigatorBar.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const allTags = new Set(posts.flatMap((post) => post.data.tags ?? []));
+
+const tags = [...allTags].sort();
 ---
 
 <!doctype html>
@@ -74,6 +78,39 @@ const posts = (await getCollection("blog")).sort(
             }
           </div>
         </div>
+        <div class="window base" style="border-color: #ff7675; width: 100%;">
+          <div class="windowHeader" style="background-color: #ff7675;">
+            <h1>TAG_INDEX.EXE</h1>
+            <span title="Minimize" class="winminimize"><span></span></span>
+            <span title="Maximize" class="winmaximize"
+              ><span></span><span></span></span
+            >
+            <span title="Close" class="winclose">x</span>
+          </div>
+
+          <div class="wincontent">
+            <h2></h2>
+            <br />
+
+            {
+              tags.length === 0 ? (
+                <p>
+                  <em>nessuna tag trovata</em>
+                </p>
+              ) : (
+                <ul class="tag-list">
+                  {tags.map((tag) => (
+                    <li class="tag-item">
+                      <a href={`/tag/${tag}`} class="tag-link">
+                        {tag}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )
+            }
+          </div>
+        </div>
       </main>
     </div>
     <!--<Footer /> -->
@@ -114,6 +151,37 @@ const posts = (await getCollection("blog")).sort(
       font-family: monospace;
       opacity: 0.8;
       white-space: nowrap;
+    }
+
+    .tag-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag-item {
+      margin: 0;
+    }
+
+    .tag-link {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px dashed var(--cream, #ccc);
+      padding: 6px 10px;
+      border-radius: 4px;
+      color: var(--gruv-aqua);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition:
+        background 0.2s ease,
+        border-style 0.2s ease;
+    }
+
+    .tag-link:hover {
+      background: rgba(255, 185, 1, 0.1);
+      border-style: solid;
     }
 
     @media (max-width: 768px) {
