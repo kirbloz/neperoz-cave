@@ -2,8 +2,10 @@
 import BaseHead from "../components/BaseHead.astro";
 import Sidebar from "../components/Sidebar.astro";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import sona from "../assets/images/sona.jpg";
+import wavewarp from "../assets/images/waving-warpstar-transp.png";
 
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
@@ -27,11 +29,17 @@ function getImage(name: string) {
   </head>
   <body>
     <Header />
-    <div class="container">
+    <img
+      style="z-index:-1; position:fixed; width:150px; margin:20px 0 0 15%; opacity:0.75;"
+      src={wavewarp.src}
+    />
+
+    <div class="container" style="z-index:0;">
       <Sidebar />
+
       <main>
         <div class="window base">
-          <div class="windowHeader" style="">
+          <div class="windowHeader">
             <h1>WELCOME.EXE</h1>
             <span title="Minimize" class="winminimize">
               <span></span>
@@ -42,7 +50,7 @@ function getImage(name: string) {
             </span>
             <span title="Close" class="winclose">x</span>
           </div>
-          <div class="wincontent" style="">
+          <div class="wincontent">
             <h1>hello!</h1>
             <div style="display: flex;" class="h-card">
               <div>
@@ -123,7 +131,47 @@ function getImage(name: string) {
             </p>
           </div>
         </div>
+
+        <div
+          class="window pink"
+          style="min-width:0px; display: inline-block;
+        width: fit-content;"
+        >
+          <div
+            class="windowHeader"
+            style="width: auto;  display: inline-block;
+          width: fit-content;"
+          >
+            <h1>look at him</h1>
+            <span title="Minimize" class="winminimize">
+              <span></span>
+            </span>
+            <span title="Maximize" class="winmaximize">
+              <span></span>
+              <span></span>
+            </span>
+            <span title="Close" class="winclose">x</span>
+          </div>
+          <div class="wincontent">
+            <div class="center">
+              <a href="https://www.pokemon-adoption.de">
+                <img
+                  src="https://www.yatta-tempel.de/animierte/4.gif"
+                  style="width: 128px; height: 128px;"
+                  alt="gnaw"
+                /></a
+              ><br />
+              <b>Name:</b> gnaw<br />
+              Adopt one yourself! <br />@<a
+                href="https://www.pokemon-adoption.de"
+                >Pok&eacute;mon Orphanage</a
+              >
+            </div>
+          </div>
+        </div>
       </main>
     </div>
+
+    <Footer />
   </body>
 </html>
