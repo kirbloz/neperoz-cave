@@ -72,6 +72,8 @@ body {
   margin: 0;
   overflow-x: hidden;
   background-image: url("/src/assets/images/stars5.gif");
+  min-height: 100vh;
+  height: 100%;
 }
 
 .container {
@@ -267,6 +269,26 @@ body {
   color: var(--almostwhite);
 }
 
+/* red theme */
+
+.window.last-red > .windowHeader {
+  background-color: #dc251c;
+  border: 3px solid #b21209 !important;
+}
+
+.window.last-red .wincontent {
+  border: 3px solid #b21209 !important;
+  border-top: 0px solid !important;
+
+  /* default */
+  color: var(--almostwhite);
+}
+
+.window.last-red .wincontent a {
+  /* default */
+  color: var(--almostwhite);
+}
+
 /* ORANGE THEME */
 
 .window.orangee > .windowHeader {
@@ -314,6 +336,7 @@ body {
   flex-direction: column;
   overflow: auto;
   align-items: flex-start;
+  flex: 1 0 auto;
 
   width: 720px;
   max-width: calc(100% - 2em);
@@ -544,6 +567,61 @@ textarea {
 
 /* - - - - footer elements - - - - */
 
+footer {
+  width: 100%;
+  margin-block: 3em 2em;
+  font-size: 0.95em;
+  padding: 2em 1em 6em 1em;
+  background: linear-gradient(var(--gray-gradient)) no-repeat;
+  flex-shrink: 0;
+}
+
+.bar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-inline: auto;
+  padding-block: 0.15em;
+}
+.bar .left,
+.bar .right {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1 1 0;
+}
+
+.bar .left p,
+.bar .right p {
+  margin: 0;
+  padding: 0.25em 0.5em;
+  white-space: nowrap;
+}
+.status-high {
+  color: var(--darkbrown);
+  background-color: var(--gruv-dark-yellow);
+}
+.status-high a {
+  color: inherit;
+}
+.status-mid {
+  color: var(---lighter-bg-color);
+  background-color: var(--darker-fg-color);
+}
+.status-low {
+  opacity: 0.75;
+  flex: 1;
+  background-color: var(--darker-bg-color);
+}
+
+.left > .status-low {
+  text-align: left;
+}
+.right > .status-low {
+  text-align: right;
+}
+
 /* - - - - - - - - notepad theme - - - - - - - - - - - */
 /* https://css-tricks.com/how-to-create-a-notebook-design-with-css/ */
 note {
@@ -661,6 +739,12 @@ note > h4 {
 /*
 ============== MOBILE STUFF ==================
 */
+
+@media (min-height: 1400px) {
+  .container {
+    min-height: 1400px;
+  }
+}
 
 @media (max-width: 768px) {
   .container {
