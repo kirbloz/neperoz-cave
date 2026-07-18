@@ -2,7 +2,7 @@
 title: "academia is political; and I have no idea why we are now surprised by that"
 description: ""
 pubDate: "Jul 17 2026"
-updatedDate: "Jul 18 2026"
+updatedDate: "Jul 19 2026"
 tags: ["tech", "academia", "queer"]
 ---
 
@@ -25,15 +25,17 @@ and it's not a generational thing, plenty of my own peers can't manage the basic
 
 <blockquote> i expected academia to react politically to a political statement - but all I got was apathy. </blockquote>
 
-historically, universities were never neutral spaces. they emerged from cathedral and monastic schools — institutions whose entire job was training the Church's bureaucrats and theologians, not liberating anybody. explicitly Christian establishments, training clergy and administrators of the Church: theology, canon law, liturgy, but also logic, rhetoric, and basic "management" of Church property and finances.
+<h2>historically, universities were never neutral spaces</h2>
+
+they emerged from cathedral and monastic schools — institutions whose entire job was training the Church's bureaucrats and theologians, not liberating anybody. explicitly Christian establishments, training clergy and administrators of the Church: theology, canon law, liturgy, but also logic, rhetoric, and basic "management" of Church property and finances.
 
 universities didn't spring up as some pure space of knowledge; they were corporate bodies negotiating privileges with popes, emperors, and city governments, producing lawyers and clerics for those same powers.
 
 universities used to be the places where people could flee to. that could be a point in favor to the "neutral" argument... if we were to stop here. it would be as neutral as priests and monks sheltering fugitives, the disabled, the unfortunate or the poor. and i'm not saying that to give the Church credit, it's a fucked up entity that should be dismantled by all means. charity from a power structure isn't neutrality, it's maintenance.
 
----
+<h2>local communities and small towns</h2>
 
-local communities and small towns favored ~(still do)~ the rich and powerful but resistance was always there, and its connecting value was solidarity — people looking out for each other from the bottom, not power looking down and deciding who deserved shelter.
+favored ~(still do)~ the rich and powerful but resistance was always there, and its connecting value was solidarity — people looking out for each other from the bottom, not power looking down and deciding who deserved shelter.
 
 the same went for universities. people from every background shared the desire to study the world — the rich already had private tutors, they didn't need the institution for that. it was ordinary people who wanted in. but wanting in and being let in are not the same thing: the desire was universal, the door wasn't.
 
@@ -46,7 +48,9 @@ you needed to already know someone, some patron or bishop or family connection; 
 
 <blockquote>this is where the class struggle comes in. "universal" in universitas never meant universal. in order to even get in, you needed Latin! access has always been filtered by geography, language, and cultural capital; if you did not have money and wealth you could hope for the Church to decide you were worth the investment. even now, when we pretend "everyone can study," the institution quietly sorts people by who can afford rent, who can survive unpaid internships, who can navigate bureaucracy, who already speaks the right academic dialect.</blockquote>
 
-and here's the thing — if that's what a university is, historically, structurally, then what it should be starts to look very different from "excellence" or "employability" or whatever the KPI of the month is. it should be a place of systematic dissent. a community of people who are, quite literally, paid to question what we think we already know. not to produce workers. not to produce rankings. to produce doubt, on purpose, as a public good.
+<h2>and here's the thing</h2>
+
+if that's what a university is, historically, structurally, then what it should be starts to look very different from "excellence" or "employability" or whatever the KPI of the month is. it should be a place of systematic dissent. a community of people who are, quite literally, paid to question what we think we already know. not to produce workers. not to produce rankings. to produce doubt, on purpose, as a public good.
 
 <blockquote><b>neutrality is a myth that hides the fact that universities have always been political tools</b>, shaped by the interests of those who fund them — whether that's the medieval Church or today's state, corporations, and yes, the military.</blockquote>
 
@@ -55,7 +59,7 @@ and this is exactly why, when a government goes after university autonomy it isn
 
 ---
 
-on a last, personal note:
+<h4>on a last, personal note:</h4>
 
 i cant deny it, i often times deliberately take provocative actions in order to elicit reactions and test both the social and political enviroment that i am living at the moment. hell i wore a trans pride pin for my graduation, i stood out like an elephant in a room full of gloomy dark-blue-suit compsci engineering graduates.
 
@@ -63,4 +67,4 @@ i cant deny it, i often times deliberately take provocative actions in order to 
 
 and maybe i am just paranoid, but not once have i been openly confronted in university and it is rubbing me wrong, because i know this place is NOT ready for queer people in academia (it does not even realize a good chunk of it is already queer, figuriamoci) and because i KNOW i will be completely unpreparated, taken by surprise, when the day i have to stand up for my siblings comes- and i will feel so eternally guilty if i were to fail them.
 
-this blog entry is so convoluted it is giving me a headache.
+<h5>this blog entry is so convoluted it is giving me a headache.</h5>
