@@ -133,39 +133,67 @@ function getImage(name: string) {
         </div>
 
         <div
-          class="window pink"
-          style="min-width:0px; display: inline-block;
-        width: fit-content;"
+          class="main"
+          style="display:flex; gap:10px; justify-items: flex-start !important; flex-wrap: wrap;
+          align-items: flex-start;"
         >
           <div
-            class="windowHeader"
-            style="width: auto;  display: inline-block;
-          width: fit-content;"
+            class="window pink"
+            style="min-width:120px; display: inline-block;
+        width: fit-content;"
           >
-            <h1>look at him</h1>
-            <span title="Minimize" class="winminimize">
-              <span></span>
-            </span>
-            <span title="Maximize" class="winmaximize">
-              <span></span>
-              <span></span>
-            </span>
-            <span title="Close" class="winclose">x</span>
+            <div class="windowHeader">
+              <h1>star</h1>
+              <span title="Minimize" class="winminimize">
+                <span></span>
+              </span>
+              <span title="Maximize" class="winmaximize">
+                <span></span>
+                <span></span>
+              </span>
+              <span title="Close" class="winclose">x</span>
+            </div>
+            <div class="wincontent">
+              <div class="center">
+                <a href="https://www.pokemon-adoption.de">
+                  <img
+                    src="https://www.yatta-tempel.de/animierte/4.gif"
+                    style="width: 128px; height: 128px;"
+                    alt="gnaw"
+                  /></a
+                ><br />
+                <b>Name:</b> gnaw<br />
+                Adopt one yourself! <br />@<a
+                  href="https://www.pokemon-adoption.de"
+                  >Pok&eacute;mon Orphanage</a
+                >
+              </div>
+            </div>
           </div>
-          <div class="wincontent">
-            <div class="center">
-              <a href="https://www.pokemon-adoption.de">
-                <img
-                  src="https://www.yatta-tempel.de/animierte/4.gif"
-                  style="width: 128px; height: 128px;"
-                  alt="gnaw"
-                /></a
-              ><br />
-              <b>Name:</b> gnaw<br />
-              Adopt one yourself! <br />@<a
-                href="https://www.pokemon-adoption.de"
-                >Pok&eacute;mon Orphanage</a
-              >
+
+          <div
+            class="window last-red"
+            style="min-width:12px; max-width: 300px; display: inline-block;
+        width: fit-content;"
+          >
+            <div class="windowHeader">
+              <h1>♫ last of em ♫</h1>
+              <span title="Minimize" class="winminimize">
+                <span></span>
+              </span>
+              <span title="Maximize" class="winmaximize">
+                <span></span>
+                <span></span>
+              </span>
+              <span title="Close" class="winclose">x</span>
+            </div>
+            <div class="wincontent">
+              <center>
+                <div id="listening"></div>
+                <script type="module">
+                  import "../utils/lastfm.js";
+                </script>
+              </center>
             </div>
           </div>
         </div>
