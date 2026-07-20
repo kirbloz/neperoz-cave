@@ -1,0 +1,70 @@
+/* https://css-tricks.com/how-to-create-a-notebook-design-with-css/ */
+note {
+  background-color: var(--cream);
+  width: 100%;
+  width: auto;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+}
+
+note > span {
+  white-space: normal !important;
+}
+
+note > h4 {
+  color: #cd0000;
+  font-size: clamp(28px, 6vw, 42px);
+  letter-spacing: -2px;
+  text-align: left;
+}
+
+.list {
+  color: #555;
+  font-size: 16px;
+  padding: 0 !important;
+  width: 100%;
+  font-family: courier, monospace;
+  border: 1px solid #dedede;
+  box-sizing: border-box;
+}
+
+.list li {
+  list-style: none;
+  border-bottom: 1px dotted #ccc;
+  text-indent: -15px;
+  height: auto;
+  padding: 10px 10px 10px 50px;
+  text-transform: capitalize;
+  overflow-wrap: break-word;
+}
+
+.list li:hover {
+  background-color: #f9f1af;
+  transition: all 0.2s;
+}
+.lines {
+  border-left: 1px solid #ffaa9f;
+  border-right: 1px solid #ffaa9f;
+  width: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 4%;
+  pointer-events: none;
+}
+.source-window {
+  width: 100%;
+  max-width: 450px;
+}
+
+@media (max-width: 768px) {
+  .lines {
+    left: 30px;
+  }
+  .list li {
+    padding-left: 60px;
+  }
+}

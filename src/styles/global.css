@@ -7,55 +7,7 @@
 /* credits for gruvbox theme: https://userstyles.world/style/16233/nekoweb-gruvbox */
 /* credits for palette: https://github.com/morhetz/gruvbox*/
 
-:root {
-  --bg-color: #282828;
-  --darker-bg-color: #1d2021;
-  --lighter-bg-color: #3c3836;
-  --fg-color: #ebdbb2;
-
-  --darker-fg-color: #d5c4a1;
-  --lighter-fg-color: #fbf1c7;
-  --gruv-red: #fb4934;
-  --gruv-dark-red: #cc241d;
-  --gruv-green: #b8bb26;
-  --gruv-dark-green: #98971a;
-  --gruv-yellow: #fabd2f;
-  --gruv-dark-yellow: #d79921;
-  --gruv-blue: #83a598;
-  --gruv-dark-blue: #458588;
-  --gruv-purple: #d3869b;
-  --gruv-dark-purple: #b16286;
-  --gruv-aqua: #8ec07c;
-  --gruv-dark-aqua: #689d6a;
-  --gruv-orange: #fe8019;
-  --gruv-dark-orange: #d65d0e;
-  --gruv-light-gray: #a89984;
-  --gruv-gray: #928374;
-  --gruv-dark-gray: #928374;
-
-  --almostwhite: #f9f5d7;
-  --cream: #fbf1c7;
-  --orange: #fe8019;
-  --dark-orange: #d65d0e;
-  --peach: #ff0000;
-  --pink: #ff0000;
-  --purple: #d3869b;
-  --palegreen: #ff0000;
-  --gray: #ff0000;
-  --lightbrown: #ff0000;
-  --darkbrown: #774519;
-  --light-red: #fb4934;
-  --crazy-green: #ff0000;
-  --gradientorange: linear-gradient(#fff2df, #fadabe);
-
-  --min-dim-main: auto;
-  --min-dim-side: 320px;
-  --max-dim-main: auto;
-  --max-dim-side: 300px;
-
-  --min-win: 500px;
-  --max-win: 1000px;
-}
+@import "./variables.css";
 
 html {
   scroll-behavior: smooth;
@@ -78,304 +30,6 @@ body {
   background-image: url("/src/assets/images/stars5.gif");
   min-height: 100dvh;
   height: 100%;
-}
-
-.container {
-  flex: 1 0 auto;
-  margin-top: 50px;
-  display: flex;
-  width: 80%;
-  margin: auto;
-  /*padding: 50px;*/
-  align-items: flex-start;
-  gap: 30px;
-}
-
-.container > aside,
-.container > .sidebar {
-  width: 250px; /* or whatever width you want */
-  flex-shrink: 0; /* prevents sidebar from shrinking */
-  justify-content: flex-start;
-}
-
-/* - - - - navigation bar - - - - */
-
-.navigation {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  border: 2px dashed var(--orange);
-}
-
-.navigation div:first-child {
-  border-left: none;
-}
-
-.navigation div:last-child {
-  border-right: none;
-}
-
-.navigator-bar div a,
-.navigation div a {
-  display: block;
-  height: 20px;
-  padding: 5px 10px;
-  padding-top: 7px;
-  font-weight: bold;
-  min-width: 70px;
-  text-decoration: none;
-  color: var(--fg-color);
-}
-
-.navigator-bar div a:hover,
-.navigation div a:hover {
-  color: var(--gruv-yellow);
-}
-
-/* - - - - windows style - - - - */
-
-.window {
-  background: var(--darker-bg-color);
-  min-width: var(--min-win);
-  max-width: var(--max-win);
-  margin: 10px 0;
-}
-
-.windowHeader {
-  /* background color are in the color windows classes */
-  /*background-color: var(--cream);*/
-  padding: 6px 6px 6px 4px;
-  text-align: right;
-
-  border-top: 2px solid var(--gruv-gray) !important;
-  border-right: 2px solid var(--gruv-gray) !important;
-  border-left: 2px solid var(--gruv-gray) !important;
-  border-radius: 5px 5px 0px 0px;
-}
-
-/* window's title */
-.windowHeader > h1 {
-  float: left;
-  margin: 0px 3px 0 10px;
-  line-height: 30px;
-}
-
-/* THESE ARE THE BUILDING BLOCKS FOR THE WINDOWS LAYOUT */
-.windowHeader > span {
-  display: inline-block;
-  border: 1px solid var(--darker-bg-color);
-  margin-left: 4px;
-  font-size: 19px;
-  padding: 2px 10px 2px 8px;
-
-  border-radius: 5px;
-  line-height: 20px;
-  width: 12px;
-  height: 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-.windowHeader > span:hover {
-  background: var(--almostwhite);
-}
-.windowHeader > span.winclose:hover {
-  background: var(--gruv-red);
-}
-.windowHeader > span.winminimize:hover {
-  background: var(--gruv-yellow);
-}
-.windowHeader > span.winmaximize:hover {
-  background: var(--gruv-green);
-}
-
-.windowHeader > span > span {
-  display: inline-block;
-  height: 8px;
-  width: 10px;
-  position: absolute;
-  top: 6px;
-  left: 10px;
-}
-.winminimize > span {
-  border-bottom: 1px solid var(--darker-bg-color);
-}
-.winmaximize > span {
-  border: 1px solid var(--darker-bg-color);
-  border-top: 1px solid var(--darker-bg-color);
-}
-
-.wincontent li {
-  list-style: none;
-}
-
-.wincontent > ul > ul {
-  margin: 0;
-  padding: 0;
-}
-
-.wincontent > table {
-  align-items: flex-start;
-}
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-/* style for non-color stuff */
-.wincontent {
-  padding: 20px;
-  box-sizing: border-box;
-  text-wrap: wrap;
-  min-width: var(--min-dim-main);
-  min-height: 140px;
-}
-
-.wincontent a {
-  text-decoration: none;
-  font-style: italic;
-}
-
-/* base theme */
-.window.base > .windowHeader {
-  /*background-color: var(--cream);*/
-  /*border: 3px solid var(--gruv-gray);*/
-  background-color: #ffb901;
-  border: 3px solid var(--cream) !important;
-}
-
-.window.base .wincontent {
-  width: auto;
-  border: 3px solid var(--gruv-gray) !important;
-  border-top: 0px solid !important;
-  border-radius: 0 0 5px 5px;
-  /* default */
-  color: var(--almostwhite);
-}
-
-.window.base .wincontent a {
-  /* default */
-  color: var(--almostwhite);
-}
-
-/* pink theme */
-.window.pink > .windowHeader {
-  background: var(--gruv-dark-purple);
-  border: 3px solid var(--purple) !important;
-}
-
-.window.pink .wincontent {
-  border: 3px solid var(--purple);
-  border-top: 0px solid !important;
-
-  /* default */
-  color: var(--almostwhite);
-}
-
-.window.pink .wincontent a {
-  /* default */
-  color: var(--almostwhite);
-}
-
-/* red theme */
-
-.window.last-red > .windowHeader {
-  background-color: #dc251c;
-  border: 3px solid #b21209 !important;
-}
-
-.window.last-red .wincontent {
-  border: 3px solid #b21209 !important;
-  border-top: 0px solid !important;
-
-  /* default */
-  color: var(--almostwhite);
-}
-
-.window.last-red .wincontent a {
-  /* default */
-  color: var(--almostwhite);
-}
-
-/* ORANGE THEME */
-
-.window.orangee > .windowHeader {
-  background: #d76c4f /*var(--gruv-dark-orange)*/;
-  border: 3px solid var(--gruv-orange) !important;
-}
-
-.window.orangee .wincontent {
-  border: 3px solid var(--gruv-orange);
-  border-top: 0px solid;
-
-  /* default */
-  color: var(--almostwhite);
-}
-
-.window.orangee .wincontent a {
-  /* default */
-  color: var(--almostwhite);
-}
-
-/* blue theme */
-.window.blue > .windowHeader {
-  background-color: var(--gruv-blue);
-  border: 3px solid var(--gruv-aqua) !important;
-}
-
-.window.blue .wincontent {
-  border: 3px solid var(--gruv-aqua) !important;
-  border-top: 0px solid;
-  /* default */
-  color: var(--almostwhite);
-}
-
-.window.blue .wincontent a {
-  color: var(--almostwhite);
-}
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-/* snippets from https://candywolf.neocities.org/ */
-
-/* sona icon on the homepage first window */
-#sona {
-  margin: 0 35px;
-  border-radius: 5px;
-  border: 3px solid var(--cream) !important;
-  object-fit: cover;
-  float: right;
-  max-height: 200px;
-}
-
-/* trans flag */
-#trans-flag {
-  display: inline-block;
-  height: 1rem;
-  margin-left: 3px;
-  aspect-ratio: 3 / 2;
-  line-height: 1;
-  vertical-align: middle;
-  border: 1px solid #666;
-  border-radius: 1px;
-  box-shadow:
-    inset 0 0 1px #fff,
-    0 1px 2px #0004;
-  background: linear-gradient(
-    to bottom,
-    #5bcffb 0% 20%,
-    #f5abb9 20% 40%,
-    white 40% 60%,
-    #f5abb9 60% 80%,
-    #5bcffb 80% 100%
-  );
-}
-
-/* little kirbis div */
-#kirby {
-  vertical-align: top;
-  margin-right: 5px;
-  position: relative;
-  cursor: pointer;
-  object-fit: cover;
 }
 
 p {
@@ -428,11 +82,6 @@ h3 {
   color: var(--gruv-yellow);
 }
 
-.h-subheader {
-  color: var(--almostwhite);
-  padding: 3px;
-}
-
 hr {
   border: none;
   border-bottom: 1px solid var(--orange);
@@ -448,9 +97,63 @@ textarea {
   font-family: "Courier New", sans-serif;
 }
 
-.subtext {
-  line-height: 19px;
-  font-size: 12px;
+/* weh */
+
+/* @import "./layout.css"; */
+
+/* - - - - navigation bar - - - - */
+
+/* moved to navigation.css */
+
+/* - - - - windows style - - - - */
+
+/* moved to window.css */
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* snippets from https://candywolf.neocities.org/ */
+
+/* sona icon on the homepage first window */
+#sona {
+  margin: 0 35px;
+  border-radius: 5px;
+  border: 3px solid var(--cream) !important;
+  object-fit: cover;
+  float: right;
+  max-height: 200px;
+  max-width: 100%;
+}
+
+/* trans flag */
+#trans-flag {
+  display: inline-block;
+  height: 1rem;
+  margin-left: 3px;
+  aspect-ratio: 3 / 2;
+  line-height: 1;
+  vertical-align: middle;
+  border: 1px solid #666;
+  border-radius: 1px;
+  box-shadow:
+    inset 0 0 1px #fff,
+    0 1px 2px #0004;
+  background: linear-gradient(
+    to bottom,
+    #5bcffb 0% 20%,
+    #f5abb9 20% 40%,
+    white 40% 60%,
+    #f5abb9 60% 80%,
+    #5bcffb 80% 100%
+  );
+}
+
+/* little kirbis div */
+#kirby {
+  vertical-align: top;
+  margin-right: 5px;
+  position: relative;
+  cursor: pointer;
+  object-fit: cover;
 }
 
 /* - - - - header elements - - - - */
@@ -495,138 +198,29 @@ textarea {
   height: 138px;
 }
 
+/* technically banner?? idfk*/
+
+.h-subheader {
+  color: var(--almostwhite);
+  padding: 3px;
+}
+
+.subtext {
+  line-height: 19px;
+  font-size: 12px;
+}
+
 /* idk man i copied these snippets around */
 
 /* banner style has been moved to header.astro */
 
 /* - - - - footer elements - - - - */
 
-footer {
-  width: 100%;
-  margin-block: 3em 2em;
-  font-size: 0.95em;
-  padding: 2em 1em 6em 1em;
-  background: linear-gradient(var(--gray-gradient)) no-repeat;
-  flex-shrink: 0;
-}
-
-.bar {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  margin-inline: auto;
-  padding-block: 0.15em;
-}
-.bar .left,
-.bar .right {
-  display: flex;
-  flex-flow: row nowrap;
-  flex: 1 1 0;
-}
-
-.bar .left p,
-.bar .right p {
-  margin: 0;
-  padding: 0.25em 0.5em;
-  white-space: nowrap;
-}
-.status-high {
-  color: var(--darkbrown);
-  background-color: var(--gruv-dark-yellow);
-}
-.status-high a {
-  color: inherit;
-}
-.status-mid {
-  color: var(--lighter-bg-color);
-  background-color: var(--darker-fg-color);
-}
-.status-low {
-  opacity: 0.75;
-  flex: 1;
-  background-color: var(--darker-bg-color);
-}
-
-.left > .status-low {
-  text-align: left;
-}
-.right > .status-low {
-  text-align: right;
-}
+/* moved to footer.css */
 
 /* - - - - - - - - notepad theme - - - - - - - - - - - */
-/* https://css-tricks.com/how-to-create-a-notebook-design-with-css/ */
-note {
-  background-color: var(--cream);
-  width: 100%;
-  width: auto;
-  margin: 0 auto;
-  padding: 0;
-  position: relative;
-  box-sizing: border-box;
-  display: block;
-}
 
-note > span {
-  white-space: normal !important;
-}
-
-note > h4 {
-  color: #cd0000;
-  font-size: clamp(28px, 6vw, 42px);
-  letter-spacing: -2px;
-  text-align: left;
-}
-
-.list {
-  color: #555;
-  font-size: 16px;
-  padding: 0 !important;
-  width: 100%;
-  font-family: courier, monospace;
-  border: 1px solid #dedede;
-  box-sizing: border-box;
-}
-
-.list li {
-  list-style: none;
-  border-bottom: 1px dotted #ccc;
-  text-indent: -15px;
-  height: auto;
-  padding: 10px 10px 10px 50px;
-  text-transform: capitalize;
-  overflow-wrap: break-word;
-}
-
-.list li:hover {
-  background-color: #f9f1af;
-  transition: all 0.2s;
-}
-.lines {
-  border-left: 1px solid #ffaa9f;
-  border-right: 1px solid #ffaa9f;
-  width: 2px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 4%;
-  pointer-events: none;
-}
-.source-window {
-  width: 100%;
-  max-width: 450px;
-}
-
-@media (max-width: 768px) {
-  .lines {
-    left: 30px;
-  }
-  .list li {
-    padding-left: 60px;
-  }
-}
+/* moved to notepad.css */
 
 /* - - - News - - - - - */
 .newsbox {
@@ -656,7 +250,7 @@ note > h4 {
   white-space: nowrap;
 }
 
-/* ****** blog ********* */
+/* blog */
 .post-tags {
   margin: 0.5rem 0 !important;
 }
@@ -668,6 +262,11 @@ note > h4 {
   margin-right: 6px;
   color: var(--gruv-aqua) !important;
   font-size: 0.8em;
+}
+
+#trackImg {
+  box-shadow: 0px 0px 31px 2px rgba(215, 154, 33, 0.64);
+  max-height: 150px;
 }
 
 /*
@@ -718,7 +317,7 @@ note > h4 {
   }
   @media (max-width: 600px) {
     .bar {
-      flex-flow: column nowrap; /* impila left/right verticalmente su schermi piccoli */
+      flex-flow: column nowrap;
       align-items: stretch;
     }
 

@@ -1,0 +1,22 @@
+---
+interface Props {
+  theme?: "base" | "pink" | "last-red" | "orangee" | "blue";
+  title?: string;
+  style?: string;
+}
+
+const { theme = "base", title, style } = Astro.props;
+import "../styles/window.css";
+---
+
+<div class:list={["window", theme]} style={style}>
+  <div class="windowHeader">
+    {title && <h1>{title}</h1>}
+    <span class="winminimize"><span></span></span>
+    <span class="winmaximize"><span></span></span>
+    <span class="winclose">x<span></span></span>
+  </div>
+  <div class="wincontent">
+    <slot />
+  </div>
+</div>

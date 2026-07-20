@@ -8,6 +8,9 @@ import Footer from "../../components/Footer.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 import NavigatorBar from "../../components/NavigatorBar.astro";
 
+import Window from "../../components/Window.astro";
+import "../../styles/layout.css";
+
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
@@ -24,94 +27,68 @@ const tags = [...allTags].sort();
   </head>
   <body>
     <Header />
-    <div class="container">
-      <main style="margin:auto;">
-        <NavigatorBar />
-        <div class="window base">
-          <div class="windowHeader">
-            <h1>✉ MAIN.EXE ✉</h1>
-            <span title="Minimize" class="winminimize"><span></span></span>
-            <span title="Maximize" class="winmaximize"
-              ><span></span><span></span></span
-            >
-            <span title="Close" class="winclose">x</span>
-          </div>
-          <div class="wincontent">
-            <h1>wip</h1>
-            <p>
-              i like writing short things abt stuff i do or think abt and i
-              might publish them here
-            </p>
-          </div>
-        </div>
+    <div class="container" style="flex-direction: column; ">
+      <NavigatorBar />
+      <main style="margin: 0 auto;width:100%;">
+        <Window theme="base" title="✉ MAIN.EXE ✉">
+          <h2>my thoughts</h2>
+          <p>
+            i like writing short things abt stuff i do or think abt and i might
+            publish them here
+          </p>
+        </Window>
 
-        <div class="window base" style="border-color: #a29bfe; width: 100%;">
-          <div class="windowHeader" style="background-color: #a29bfe;">
-            <h1>BLOG_ARCHIVE.EXE</h1>
-            <span title="Minimize" class="winminimize"><span></span></span>
-            <span title="Maximize" class="winmaximize"
-              ><span></span><span></span></span
-            >
-            <span title="Close" class="winclose">x</span>
-          </div>
-          <div class="wincontent">
-            <h2>my thoughts:</h2>
-            <br />
+        <Window
+          theme="base"
+          title="BLOG_ARCHIVE.EXE"
+          style="--win-header-bg:#a29bfe; --win-border-color:var(--gruv-gray);"
+        >
+          <h2>my thoughts</h2>
 
-            {
-              posts.length === 0 ? (
-                <p>
-                  <em>ancora nessun post... presto!</em>
-                </p>
-              ) : (
-                <ul class="blog-list">
-                  {posts.map((post) => (
-                    <li class="blog-item">
-                      <a href={`/blog/${post.id}/`} class="blog-link">
-                        <span class="blog-title">{post.data.title}</span>
-                        <span class="blog-date">
-                          [ <FormattedDate date={post.data.pubDate} /> ]
-                        </span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )
-            }
-          </div>
-        </div>
-        <div class="window base">
-          <div class="windowHeader" style="background-color: #ff7675;">
-            <h1>TAG_INDEX.EXE</h1>
-            <span title="Minimize" class="winminimize"><span></span></span>
-            <span title="Maximize" class="winmaximize"
-              ><span></span><span></span></span
-            >
-            <span title="Close" class="winclose">x</span>
-          </div>
+          {
+            posts.length === 0 ? (
+              <p>
+                <em>ancora nessun post... presto!</em>
+              </p>
+            ) : (
+              <ul class="blog-list">
+                {posts.map((post) => (
+                  <li class="blog-item">
+                    <a href={`/blog/${post.id}/`} class="blog-link">
+                      <span class="blog-title">{post.data.title}</span>
+                      <span class="blog-date">
+                        [ <FormattedDate date={post.data.pubDate} /> ]
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )
+          }
+        </Window>
 
-          <div class="wincontent" style="min-height: 50px;">
-            {
-              tags.length === 0 ? (
-                <p>
-                  <em>nessuna tag trovata</em>
-                </p>
-              ) : (
-                <ul class="tag-list">
-                  {tags.map((tag) => (
-                    <li class="tag-item">
-                      <a href={"/404.html" /* '/tag/${tag}'*/} class="tag-link">
-                        {tag}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )
-            }
-          </div>
-        </div>
+        <Window theme="blue" title="TAG_INDEX.EXE">
+          {
+            tags.length === 0 ? (
+              <p>
+                <em>Nessuna tag trovata</em>
+              </p>
+            ) : (
+              <ul class="tag-list" style="min-height: 50px;">
+                {tags.map((tag) => (
+                  <li class="tag-item">
+                    <a href={"/404.html" /* '/tag/${tag}'*/} class="tag-link">
+                      {tag}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )
+          }
+        </Window>
       </main>
     </div>
+
     <Footer />
   </body><style>
     .blog-list {
@@ -159,6 +136,8 @@ const tags = [...allTags].sort();
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      justify-content: flex-start;
+      align-items: center;
     }
 
     .tag-item {

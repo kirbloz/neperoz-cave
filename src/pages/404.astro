@@ -1,6 +1,8 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
+7;
+import Window from "../components/Window.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 import { Image } from "astro:assets";
@@ -10,6 +12,8 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   "../assets/images/*.{png,jpg,jpeg,gif,svg}",
   { eager: true },
 );
+
+import "../styles/window.css";
 
 function getImage(name: string) {
   const img = images[`../assets/images/${name}`]?.default;
@@ -28,76 +32,49 @@ function getImage(name: string) {
   </head>
   <body>
     <Header />
-    <div class="container">
+    <div class="container" style="width: 60%; margin: 0 auto;">
       <main style="width:100%;">
-        <div class="window base" style="border-color: #dc3545; width:100%;">
-          <div
-            class="windowHeader"
-            style="background-color: #dc3545; border: 2px solid var(--cream);"
-          >
-            <h1>ERROR_404.EXE</h1>
-            <span title="Minimize" class="winminimize">
-              <span></span>
-            </span>
-            <span title="Maximize" class="winmaximize">
-              <span></span>
-              <span></span>
-            </span>
-            <span title="Close" class="winclose">x</span>
-          </div>
-          <div class="wincontent">
-            <h1 style="font-size: clamp(20px, 5vw, 30px);">page not found!</h1>
-            <div class="error-layout">
-              <div>
-                <p>
-                  uh oh! it seems you've stumbled upon a broken link, or maybe
-                  nepero haven't coded this page yet (web dev is hard, ok?).
-                </p>
-                <p>
-                  <a href="/home" style="font-weight: bold; color: #ffb901;">
-                    [ click here to go back home ]
-                  </a>
-                </p>
-              </div>
-              <div>
-                <Image
-                  src={getImage("kirbyinhaling2.gif")}
-                  alt="Kirby inhaled this page"
-                />
-              </div>
+        <Window
+          theme="base"
+          title="ERROR_404.EXE"
+          style="--win-header-bg:#dc3545"
+        >
+          <h1 style="font-size: clamp(20px, 5vw, 30px);">page not found!</h1>
+          <div class="error-layout">
+            <div>
+              <p>
+                uh oh! it seems you've stumbled upon a broken link, or maybe
+                neperoz hasn't coded this page yet (web dev is hard, ok?).
+              </p>
+              <p>
+                <a href="/home" style="font-weight: bold; color: #ffb901; ">
+                  [ click here to go back home ]
+                </a>
+              </p>
             </div>
-            <br />
-            <hr />
-            <br />
-            <div style="text-align: center;">
-              <p>meanwhile, you can look at this dancing kirby:</p>
+            <div>
               <Image
-                src={getImage("kirbydance.gif")}
-                alt="Kirby dancing sprite"
-                style="max-width: 80px; height: auto;"
+                src={getImage("kirbyinhaling2.gif")}
+                alt="Kirby inhaled this page"
               />
             </div>
           </div>
-        </div>
+          <br />
+          <hr />
+          <br />
+          <div style="text-align: center;">
+            <p>meanwhile, you can look at this dancing kirby:</p>
+            <Image
+              src={getImage("kirbydance.gif")}
+              alt="Kirby dancing sprite"
+              style="max-width: 80px; height: auto;"
+            />
+          </div>
+        </Window>
       </main>
     </div>
   </body><style>
-    .window,
-    .wincontent,
-    .container,
-    main {
-      box-sizing: border-box;
-    }
-
-    main {
-      display: flex;
-      flex-direction: flex-start;
-      justify-content: space-evenly;
-      align-items: center;
-    }
-
     .window {
-      width: 100%;
       max-width: 550px !important;
     }
     .error-layout {

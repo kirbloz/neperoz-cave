@@ -5,7 +5,8 @@ import Sidebar from "../components/Sidebar.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
-import "../styles/global.css";
+import "../styles/layout.css";
+import Window from "../components/Window.astro";
 
 import { Image } from "astro:assets";
 import OwlTK from "../assets/images/owl-tk.jpg";
@@ -22,137 +23,110 @@ import Dwarf from "../assets/images/dwarf.png";
     <div class="container">
       <Sidebar />
       <main>
-        <div class="window base">
-          <div class="windowHeader">
-            <h1>✮ABT ME✮</h1>
-            <span title="Minimize" class="winminimize">
-              <span></span>
-            </span>
-            <span title="Maximize" class="winmaximize">
-              <span></span>
-              <span></span>
-            </span>
-            <span title="Close" class="winclose">x</span>
-          </div>
-
-          <div class="wincontent">
-            <h1>wip</h1>
-            <div style="display:flex;">
-              <div style="padding:20px;">
-                <p style="height: auto;">
-                  here will go my interests and other personal stuff everybody
-                  wanna know so bad (i see you microsoft)
-                </p>
-                <hr style="margin: 15px 0;" />
-                <p style="text-align: center;">
-                  male, 23, white
-                  <span id="trans-flag"></span>
-                  <br />
-                  cs eng major
-                  <br />
-                  6w5
-                </p>
-              </div>
-              <div>
-                <Image
-                  id="owl-tk"
-                  src={OwlTK}
-                  alt="owl from tokyo ghoul"
-                  width={150}
-                  height={150}
-                />
-              </div>
+        <Window theme="base" title="✮ABT ME✮">
+          <h1>wip</h1>
+          <div style="display:flex;">
+            <div style="padding:20px;">
+              <p style="height: auto;">
+                here will go my interests and other personal stuff everybody
+                wanna know so bad (i see you microsoft)
+              </p>
+              <hr style="margin: 15px 0;" />
+              <p style="text-align: center;">
+                male, 23, white
+                <span id="trans-flag"></span>
+                <br />
+                cs eng major
+                <br />
+                6w5
+              </p>
+            </div>
+            <div>
+              <Image
+                id="owl-tk"
+                src={OwlTK}
+                alt="owl from tokyo ghoul"
+                width={150}
+                height={150}
+              />
             </div>
           </div>
-        </div>
+        </Window>
 
         <!-- win hardware and software -->
-        <div class="window blue">
-          <div class="windowHeader">
-            <h1>⌨ SPECS ⌨</h1>
-            <span title="Minimize" class="winminimize">
-              <span></span>
-            </span>
-            <span title="Maximize" class="winmaximize">
-              <span></span>
-              <span></span>
-            </span>
-            <span title="Close" class="winclose">x</span>
-          </div>
-
-          <div class="wincontent">
-            <div
-              class="profile-section"
-              style="justify-content: space-evenly; padding-top: 5px;"
-            >
-              <div style="text-align:center;">
-                <h3 style="color: var(--gruv-yellow)">HW</h3>
-                <p>
-                  Aspire A715-42G
-                  <br />
-                  AMD Ryzen 7 5700U
-                  <br />
-                  GTX 1650
-                  <br />
-                  16GB
-                </p>
-              </div>
-              <div style="text-align:center;">
-                <h3 style="color: var(--gruv-yellow)">SW</h3>
-                <p>
-                  <a
-                    href="https://archlinux.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Arch Linux Rolling
-                  </a>
-                  <br />
-                  <a
-                    href="https://hypr.land/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Hyprland
-                  </a>
-                  ,
-                  <a
-                    href="https://www.vim.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    vim
-                  </a>
-                  ,
-                  <a
-                    href="https://sw.kovidgoyal.net/kitty/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    kitty
-                  </a>
-                  <br />
-                  <a
-                    href="https://github.com/fairyglade/ly"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    ly display manager
-                  </a>
-                  <br />
-                  <a
-                    href="http://www.rodsbooks.com/refind/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    rEFInd boot manager
-                  </a>
-                  <br />
-                </p>
-              </div>
+        <Window theme="blue" title="⌨ SPECS ⌨">
+          <h1>wip</h1>
+          <div
+            class="profile-section"
+            style="justify-content: space-evenly; padding-top: 5px;"
+          >
+            <div style="text-align:center;">
+              <h3 style="color: var(--gruv-yellow)">HW</h3>
+              <p>
+                Aspire A715-42G
+                <br />
+                AMD Ryzen 7 5700U
+                <br />
+                GTX 1650
+                <br />
+                16GB
+              </p>
+            </div>
+            <div style="text-align:center;">
+              <h3 style="color: var(--gruv-yellow)">SW</h3>
+              <p>
+                <a
+                  href="https://archlinux.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Arch Linux Rolling
+                </a>
+                <br />
+                <a
+                  href="https://hypr.land/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Hyprland
+                </a>
+                ,
+                <a
+                  href="https://www.vim.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  vim
+                </a>
+                ,
+                <a
+                  href="https://sw.kovidgoyal.net/kitty/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  kitty
+                </a>
+                <br />
+                <a
+                  href="https://github.com/fairyglade/ly"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ly display manager
+                </a>
+                <br />
+                <a
+                  href="http://www.rodsbooks.com/refind/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  rEFInd boot manager
+                </a>
+                <br />
+              </p>
             </div>
           </div>
-        </div>
+        </Window>
 
         <!-- win media i enjoy -->
         <div class="window pink">
@@ -170,17 +144,17 @@ import Dwarf from "../assets/images/dwarf.png";
 
           <div class="wincontent">
             <ul style="padding-left: 15px; margin: 0; list-style-type: '＋ ';">
-              <li style="margin-bottom: 15px;">＋ reptiles, insects</li>
+              <li style="margin-bottom: 15px;">reptiles, insects</li>
 
               <li style="margin-bottom: 15px;">
-                ＋ videogames
+                videogames
                 <div class="games-section">
                   <div style="flex: 1;">
                     <ul style="list-style-type: '－ '; padding: 0px 15px;">
-                      <li>－ minecraft, dwarf fortress</li>
-                      <li>－ shapez.io, factorio, factory-sims</li>
-                      <li>－ kirby, outer wilds</li>
-                      <li>－ monster hunter world</li>
+                      <li>minecraft, dwarf fortress</li>
+                      <li>shapez.io, factorio, factory-sims</li>
+                      <li>kirby, outer wilds</li>
+                      <li>monster hunter world</li>
                     </ul>
                   </div>
                   <div>
@@ -192,13 +166,13 @@ import Dwarf from "../assets/images/dwarf.png";
               </li>
 
               <li style="margin-bottom: 15px;">
-                ＋ anime, manga/manhwa/webcomics
+                anime, manga/manhwa/webcomics
 
                 <ul
                   style="list-style-type: '♲ '; padding-left: 15px; margin-top: 5px;"
                 >
                   <li>
-                    ♲ stories i enjoy:
+                    stories i enjoy:
                     <ul style="margin-left:5%;">
                       <p style="font-size: 0.95rem; opacity: 0.9; ">
                         evangelion (normie), puella madoka magica, kill la kill,
@@ -213,7 +187,7 @@ import Dwarf from "../assets/images/dwarf.png";
                   </li>
                   <li style="margin-top: 5px;">
                     <li>
-                      ♲ characters i like:
+                      characters i like:
                       <ul style="margin-left:5%;">
                         <p style="font-size: 0.95rem; opacity: 0.9; ">
                           kaneki ken, shinji ikari, kaiman, zanka nijiku, jolyne
@@ -224,7 +198,7 @@ import Dwarf from "../assets/images/dwarf.png";
                   </li>
                 </ul>
               </li>
-              <ul>＋ unhealthy ado obsession</ul>
+              <ul>unhealthy ado obsession</ul>
 
               <!-- win tech -->
             </ul>

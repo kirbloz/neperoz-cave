@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Warpstar from "../assets/images/warpstar.png";
+import "../styles/navigation.css";
 ---
 
 <!-- navigator bar -->
@@ -35,41 +36,3 @@ import Warpstar from "../assets/images/warpstar.png";
     <div><a href="/">ENTRY POINT</a></div>
   </div>
 </div>
-
-<style>
-  .navigator-wrapper {
-    flex-direction: row;
-    align-items: center !important;
-    gap: 20px;
-    width: 100%;
-    display: flex;
-  }
-  .navigator-header {
-    background-color: var(--darker-bg-color);
-    border: 2px solid var(--gruv-light-gray);
-    color: var(--almostwhite);
-    border-radius: 2px;
-    flex-direction: row;
-    gap: 10px;
-    padding: 5px 0 5px 10px;
-    display: flex;
-  }
-
-  .navigator-bar {
-    border: 2px dashed var(--orange);
-    flex-direction: row;
-    flex: 1;
-    padding: 5px 10px;
-    padding-top: 7px;
-    display: flex;
-    align-items: center;
-  }
-  .navigator-bar div {
-    flex-grow: 1;
-  }
-
-  .navigator-bar > a {
-    flex: 1;
-    display: inline;
-  }
-</style>

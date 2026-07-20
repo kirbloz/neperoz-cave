@@ -1,0 +1,42 @@
+.container {
+  flex: 1 0 auto;
+  margin-top: 50px;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  /*padding: 50px;*/
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.container > aside,
+.container > .sidebar {
+  width: 250px; /* or whatever width you want */
+  flex-shrink: 0; /* prevents sidebar from shrinking */
+  justify-content: flex-start;
+}
+
+main {
+  display: flex;
+  flex-direction: flex-start;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding-left: auto;
+  padding-right: 5%;
+  flex-wrap: wrap;
+}
+main > * {
+  max-width: 500px;
+}
+#webrings-win {
+  max-height: 300;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  scrollbar-color: var(--gruv-orange);
+}
+
+.weblog-column {
+  flex-grow: 1;
+  margin: 0 5px;
+}

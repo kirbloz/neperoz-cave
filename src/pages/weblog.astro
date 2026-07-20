@@ -1,10 +1,14 @@
 ---
 import { Image } from "astro:assets";
+import "../styles/layout.css";
+import "../styles/notepad.css";
+import "../styles/window.css";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Sidebar from "../components/Sidebar.astro";
 import NotAI from "../assets/images/not-AI.png";
+import Window from "../components/Window.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
@@ -44,7 +48,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
               <li>☐ optimize for mobile (kinda started)</li>
               <li>☒ add more buttons!!!!</li>
               <li>☐ design a more serious button</li>
-              <li>☐ add music player/last played song</li>
+              <li>☒ add music player/last played song</li>
               <li>☐ add embed sans fight simulator</li>
               <li>☐ implement gallery/archive/resources</li>
               <li>☐ implement links page</li>
@@ -53,239 +57,109 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
           </note>
         </div>
         <div class="weblog-column">
-          <div class="window pink" style="width: 100%; max-width: 450px;">
-            <div class="windowHeader">
-              <h1>🗁 source code 🗁</h1>
-              <span title="Minimize" class="winminimize">
-                <span></span>
-              </span>
-              <span title="Maximize" class="winmaximize">
-                <span></span>
-                <span></span>
-              </span>
-              <span title="Close" class="winclose">x</span>
-            </div>
-            <div class="wincontent" style="">
-              <p>this website is currently uhh v2.0</p>
-              <p>
-                + you can find everything <a
-                  href="https://github.com/kirbloz/neperoz-cave">on my github</a
-                >
-                <p>
-                  + made by paw on <a href="https://vscodium.dev/">vscodium</a>
-                </p>
-              </p>
-              <br />
-              <p
-                style="text-align:center;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"
+          <Window theme="pink" title="🗁 source code 🗁">
+            <p>this website is currently uhh v2.0</p>
+            <p>
+              + you can find everything <a
+                href="https://github.com/kirbloz/neperoz-cave">on my github</a
               >
-                ▌║█║▌│║▌│║▌║▌█║▌│║▌║▌│║║▌█║▌║█
+              <p>
+                + made by paw on <a href="https://vscodium.dev/">vscodium</a>
               </p>
-              <p style="text-align:center;">
-                <a href="https://notbyai.fyi/"
-                  ><Image
-                    src={NotAI}
-                    alt="Created by a Human not by AI badge"
-                    loading="lazy"
-                    decoding="async"
-                  /></a
-                >
-              </p>
-              <p style="text-align: center; text-decoration: underline;">
-                <a href="https://justinjackson.ca/webmaster/">
-                  "I'm a fucking webmaster"</a
-                >
-              </p>
-            </div>
-          </div>
+            </p>
+            <br />
+            <p
+              style="text-align:center;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"
+            >
+              ▌║█║▌│║▌│║▌║▌█║▌│║▌║▌│║║▌█║▌║█
+            </p>
+            <p style="text-align:center;">
+              <a href="https://notbyai.fyi/"
+                ><Image
+                  src={NotAI}
+                  alt="Created by a Human not by AI badge"
+                  loading="lazy"
+                  decoding="async"
+                /></a
+              >
+            </p>
+            <p style="text-align: center; text-decoration: underline;">
+              <a href="https://justinjackson.ca/webmaster/">
+                "I'm a fucking webmaster"</a
+              >
+            </p>
+          </Window>
 
-          <div class="window orangee">
-            <div class="windowHeader">
-              <h1>more webringz worki in progress</h1>
-              <span title="Minimize" class="winminimize">
-                <span></span>
-              </span>
-              <span title="Maximize" class="winmaximize">
-                <span></span>
-                <span></span>
-              </span>
-              <span title="Close" class="winclose">x</span>
-            </div>
-            <div id="webrings-win" class="wincontent">
-              <center>
-                <div id="gfdkris">
-                  <script
-                    type="text/javascript"
-                    src="https://fabstarotcorner.neocities.org/webring/onionring-variables.js"
-                  ></script>
-                  <script
-                    type="text/javascript"
-                    src="https://fabstarotcorner.neocities.org/webring/onionring-widget.js"
-                  ></script>
-                </div>
+          <Window theme="orangee" title="more webringz worki in progress">
+            <center style="max-height:250px; overflow:scroll;">
+              <div id="gfdkris">
+                <script
+                  type="text/javascript"
+                  src="https://fabstarotcorner.neocities.org/webring/onionring-variables.js"
+                ></script>
+                <script
+                  type="text/javascript"
+                  src="https://fabstarotcorner.neocities.org/webring/onionring-widget.js"
+                ></script>
+              </div>
 
-                <div id="MHfanring">
-                  <script
-                    type="text/javascript"
-                    src="https://tesseractcube.neocities.org/rehaul/webring/onionring-variables.js"
-                  ></script>
-                  <script
-                    type="text/javascript"
-                    src="https://tesseractcube.neocities.org/rehaul/webring/onionring-widget3.js"
-                  ></script>
-                </div>
-                <div>
-                  <script
-                    src="https://transring.neocities.org/ring.js"
-                    data-widget="cloud"></script>
-                </div>
-                <div style="text-align: center;">
-                  <!--<map name="w95widget">
-                    <area
-                      href="https://baccyflap.com/noai"
-                      target="_blank"
-                      shape="rect"
-                      coords="0,0,308,22"
-                      alt="no ai webring"
-                      title="no ai webring"
-                    />
-                    <area
-                      href="https://baccyflap.com/noai/?prv&s=npz"
-                      target="_top"
-                      shape="rect"
-                      coords="56,36,130,58"
-                      alt="previous"
-                      title="previous"
-                    />
-                    <area
-                      href="https://baccyflap.com/noai/?rnd"
-                      target="_top"
-                      shape="rect"
-                      coords="137,36,211,58"
-                      alt="random"
-                      title="random"
-                    />
-                    <area
-                      href="https://baccyflap.com/noai/?nxt&s=npz"
-                      target="_top"
-                      shape="rect"
-                      coords="218,36,292,58"
-                      alt="next"
-                      title="next"
-                    />
-                  </map>
-                  <br />
-                  <map name="w95widget">
-                    <area
-                      href="https://baccyflap.com/noai"
-                      target="_blank"
-                      shape="rect"
-                      coords="0,0,308,22"
-                      alt="no ai webring"
-                      title="no ai webring"
-                    />
-                    <area
-                      href="https://baccyflap.com/noai/?prv&s=npz"
-                      target="_top"
-                      shape="rect"
-                      coords="56,36,130,58"
-                      alt="previous"
-                      title="previous"
-                    />
-                    <area
-                      href="https://baccyflap.com/noai/?rnd"
-                      target="_top"
-                      shape="rect"
-                      coords="137,36,211,58"
-                      alt="random"
-                      title="random"
-                    />
-                    <area
-                      href="https://baccyflap.com/noai/?nxt&s=npz"
-                      target="_top"
-                      shape="rect"
-                      coords="218,36,292,58"
-                      alt="next"
-                      title="next"
-                    />
-                  </map>
-                  <img
-                    usemap="#w95widget"
-                    src="https://baccyflap.com/noai/w95widget.gif"
-                    alt="a gray Windows 95 style dialog box titled 'The No AI Webring' with a little icon showing a computer chip in a rubbish bin. beside it are three clickable buttons, labeled Previous, Random... and Next"
-                  />-->
-                  <div style="padding: 20px;">
-                    <a
-                      href="https://baccyflap.com/noai/?prv&s=npz"
-                      target="_top">« prev</a
-                    > |
-                    <a href="https://baccyflap.com/noai" target="_blank"
-                      >no ai webring</a
-                    >
-                    <a
-                      style="font-size:60%"
-                      href="https://baccyflap.com/noai/?rnd"
-                      target="_top">(random)</a
-                    > |
-                    <a
-                      href="https://baccyflap.com/noai/?nxt&s=npz"
-                      target="_top">next »</a
-                    >
+              <div id="MHfanring">
+                <script
+                  type="text/javascript"
+                  src="https://tesseractcube.neocities.org/rehaul/webring/onionring-variables.js"
+                ></script>
+                <script
+                  type="text/javascript"
+                  src="https://tesseractcube.neocities.org/rehaul/webring/onionring-widget3.js"
+                ></script>
+              </div>
+              <div>
+                <script
+                  src="https://transring.neocities.org/ring.js"
+                  data-widget="cloud"></script>
+              </div>
+              <div style="text-align: center;">
+                <div style="padding: 20px;">
+                  <a href="https://baccyflap.com/noai/?prv&s=npz" target="_top"
+                    >« prev</a
+                  > |
+                  <a href="https://baccyflap.com/noai" target="_blank"
+                    >no ai webring</a
+                  >
+                  <a
+                    style="font-size:60%"
+                    href="https://baccyflap.com/noai/?rnd"
+                    target="_top">(random)</a
+                  > |
+                  <a href="https://baccyflap.com/noai/?nxt&s=npz" target="_top"
+                    >next »</a
+                  >
+
+                  <div style="padding-top:20px;margin:auto; width: 135px;">
+                    <iframe
+                      style="border: none; width: 100%"
+                      src="https://wiiring.jeith.com/snippet?site=neperoz-cave.nekoweb.org&variant=standard"
+                    ></iframe>
                   </div>
                 </div>
-
-                <div
-                  style="margin:auto; width: 135px; /* <- Set any width you'd like! */"
-                >
-                  <iframe
-                    style="border: none; width: 100%"
-                    src="https://wiiring.jeith.com/snippet?site=neperoz-cave.nekoweb.org&variant=standard"
-                  ></iframe>
-                </div>
-              </center>
-            </div>
-          </div>
+              </div>
+            </center>
+          </Window>
+          <center style="margin-top:10px;">
+            <p>
+              <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                <img
+                  style="border:0;width:88px;height:31px"
+                  src="https://jigsaw.w3.org/css-validator/images/vcss"
+                  alt="Valid CSS!"
+                />
+              </a>
+            </p>
+          </center>
         </div>
-        <center style="margin-top:10px;">
-          <p>
-            <a href="https://jigsaw.w3.org/css-validator/check/referer">
-              <img
-                style="border:0;width:88px;height:31px"
-                src="https://jigsaw.w3.org/css-validator/images/vcss"
-                alt="Valid CSS!"
-              />
-            </a>
-          </p>
-        </center>
+        <!-- no more windows???? -->
       </main>
-      <!-- no more windows???? -->
-
-      <Footer />
-    </div><style>
-      main {
-        display: flex;
-        flex-direction: flex-start;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-        padding-left: auto;
-        padding-right: 5%;
-        flex-wrap: wrap;
-      }
-      main > * {
-        max-width: 500px;
-      }
-      #webrings-win {
-        max-height: 300;
-        overflow: scroll;
-        scroll-behavior: smooth;
-        scrollbar-color: var(--gruv-orange);
-      }
-
-      .weblog-column {
-        flex-grow: 1;
-        margin: 0 5px;
-      }
-    </style>
+    </div>
+    <Footer />
   </body>
 </html>

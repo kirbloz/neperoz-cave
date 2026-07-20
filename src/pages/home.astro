@@ -3,12 +3,16 @@ import BaseHead from "../components/BaseHead.astro";
 import Sidebar from "../components/Sidebar.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Window from "../components/Window.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+
 import sona from "../assets/images/sona.jpg";
 import wavewarp from "../assets/images/waving-warpstar-transp.png";
-
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
+
+import "../styles/layout.css";
+import "../styles/window.css";
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../assets/images/*.{png,jpg,jpeg,gif,svg}",
@@ -38,165 +42,106 @@ function getImage(name: string) {
       <Sidebar />
 
       <main>
-        <div class="window base">
-          <div class="windowHeader">
-            <h1>WELCOME.EXE</h1>
-            <span title="Minimize" class="winminimize">
-              <span></span>
-            </span>
-            <span title="Maximize" class="winmaximize">
-              <span></span>
-              <span></span>
-            </span>
-            <span title="Close" class="winclose">x</span>
-          </div>
-          <div class="wincontent">
-            <h1>hello!</h1>
-            <div style="display: flex;" class="h-card">
-              <div>
-                <p class="p-note">
-                  you may refer to me as <a
-                    href="https://neperoz-cave.nekoweb.org/about"
-                    rel="me"
-                    class="p-nickname u-url">neperoz</a
-                  >, and i am currently embarked on a (hellish) journey of
-                  figuring out university
-                </p>
-                <p>this thingie on the right is my sona btw ------&gt;</p>
-              </div>
-              <div>
-                <img id="sona" class="u-photo" src={sona.src} />
-              </div>
+        <Window theme="base" title="hello.EXE">
+          <h1>hello!</h1>
+          <div style="display:flex;">
+            <div style="" class="h-card">
+              <p class="p-note">
+                you may refer to me as <a
+                  href="https://neperoz-cave.nekoweb.org/about"
+                  rel="me"
+                  class="p-nickname u-url">neperoz</a
+                > and i am currently embarked on a (hellish) journey of figuring out
+                university
+              </p>
+              <p>this thingie on the right is my sona btw ------&gt;</p>
             </div>
-            <br />
-            <hr />
-            <br />
-            <div>
-              <p>there isnt much here for now.. go browse the other pages!!</p>
-            </div>
+            <img id="sona" class="u-photo" src={sona.src} />
           </div>
-        </div>
-
-        <div class="window pink">
-          <div class="windowHeader" style="background: pink;">
-            <h1>kirby</h1>
-            <span title="Minimize" class="winminimize">
-              <span></span>
-            </span>
-            <span title="Maximize" class="winmaximize">
-              <span></span>
-              <span></span>
-            </span>
-            <span title="Close" class="winclose">x</span>
+          <br />
+          <hr />
+          <br />
+          <div>
+            <p>there isnt much here for now.. go browse the other pages!!</p>
           </div>
-          <div class="wincontent">
-            <h1>wip</h1>
-            <p>im slow ok?</p>
-            <p>have some kirbis</p>
+        </Window>
 
-            <Image src={getImage("kirby_swim.gif")} alt="Kirby swimming" />
-            <Image
-              src={getImage("rock_kirby.gif")}
-              alt="Kirby as a rock star"
-            />
-            <Image src={getImage("kirbydance.gif")} alt="Kirby dancing" />
-            <Image src={getImage("kirbyinhaling2.gif")} alt="Kirby inhaling" />
-            <Image
-              src={getImage("kirby_cancel_right.gif")}
-              alt="Kirby cancel animation, facing right"
-            />
-            <Image
-              src={getImage("kirby_fat.gif")}
-              alt="Kirby after eating, round and full"
-            />
-            <Image
-              src={getImage("kirby_kiss.gif")}
-              alt="Kirby kiss animation"
-            />
-            <Image
-              src={getImage("kirby_mirror_right.gif")}
-              alt="Kirby mirror ability, facing right"
-            />
-            <Image
-              src={getImage("kirbyhammerwalk6.gif")}
-              alt="Kirby walking with hammer ability"
-            />
+        <Window theme="pink" title="kirbee" style="--win-header-bg:pink;">
+          <h1>wip</h1>
+          <p>im slow ok?</p>
+          <p>have some kirbis</p>
 
-            <hr />
-            <h3>small note</h3>
-            <p>
-              i can't set up <a href="https://indieauth.com/">IndieAuth.com</a> login
-              here because nekoweb is static only, but you can go look up how to authenticate
-              your website using existing social accounts! i use github :)
-            </p>
-          </div>
-        </div>
+          <Image src={getImage("kirby_swim.gif")} alt="Kirby swimming" />
+          <Image src={getImage("rock_kirby.gif")} alt="Kirby as a rock star" />
+          <Image src={getImage("kirbydance.gif")} alt="Kirby dancing" />
+          <Image src={getImage("kirbyinhaling2.gif")} alt="Kirby inhaling" />
+          <Image
+            src={getImage("kirby_cancel_right.gif")}
+            alt="Kirby cancel animation, facing right"
+          />
+          <Image
+            src={getImage("kirby_fat.gif")}
+            alt="Kirby after eating, round and full"
+          />
+          <Image src={getImage("kirby_kiss.gif")} alt="Kirby kiss animation" />
+          <Image
+            src={getImage("kirby_mirror_right.gif")}
+            alt="Kirby mirror ability, facing right"
+          />
+          <Image
+            src={getImage("kirbyhammerwalk6.gif")}
+            alt="Kirby walking with hammer ability"
+          />
+
+          <hr />
+          <h3>small note</h3>
+          <p>
+            i can't set up <a href="https://indieauth.com/">IndieAuth.com</a> login
+            here because nekoweb is static only, but you can go look up how to authenticate
+            your website using existing social accounts! i use github :)
+          </p>
+        </Window>
 
         <div
           class="main"
-          style="display:flex; gap:10px; justify-items: flex-start !important; flex-wrap: wrap;
+          style="display:flex; gap:40px;  flex-wrap: wrap;
           align-items: flex-start;"
         >
-          <div
-            class="window pink"
-            style="min-width:120px; display: inline-block;
-        width: fit-content;"
+          <Window
+            theme="pink"
+            title="star"
+            style="min-width:120px; width: fit-content;"
           >
-            <div class="windowHeader">
-              <h1>star</h1>
-              <span title="Minimize" class="winminimize">
-                <span></span>
-              </span>
-              <span title="Maximize" class="winmaximize">
-                <span></span>
-                <span></span>
-              </span>
-              <span title="Close" class="winclose">x</span>
+            <h1>wip</h1>
+            <div class="center">
+              <a href="https://www.pokemon-adoption.de">
+                <img
+                  src="https://www.yatta-tempel.de/animierte/4.gif"
+                  style="width: 128px; height: 128px;"
+                  alt="gnaw"
+                /></a
+              ><br />
+              <b>Name:</b> gnaw<br />
+              Adopt one yourself! <br />@<a
+                href="https://www.pokemon-adoption.de"
+                >Pok&eacute;mon Orphanage</a
+              >
             </div>
-            <div class="wincontent">
-              <div class="center">
-                <a href="https://www.pokemon-adoption.de">
-                  <img
-                    src="https://www.yatta-tempel.de/animierte/4.gif"
-                    style="width: 128px; height: 128px;"
-                    alt="gnaw"
-                  /></a
-                ><br />
-                <b>Name:</b> gnaw<br />
-                Adopt one yourself! <br />@<a
-                  href="https://www.pokemon-adoption.de"
-                  >Pok&eacute;mon Orphanage</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="window last-red"
-            style="min-width:12px; max-width: 300px; display: inline-block;
-        width: fit-content;"
-          >
-            <div class="windowHeader">
-              <h1>♫ last of em ♫</h1>
-              <span title="Minimize" class="winminimize">
-                <span></span>
-              </span>
-              <span title="Maximize" class="winmaximize">
-                <span></span>
-                <span></span>
-              </span>
-              <span title="Close" class="winclose">x</span>
-            </div>
-            <div class="wincontent">
-              <center>
-                <div id="listening"></div>
-                <script type="module">
-                  import "../utils/lastfm.js";
-                </script>
-              </center>
-            </div>
-          </div>
+          </Window>
         </div>
+
+        <Window
+          theme="last-red"
+          title="♫ last of em ♫"
+          style="min-width:120px; max-width: 300px;"
+        >
+          <center>
+            <div id="listening"></div>
+            <script type="module">
+              import "../utils/lastfm.js";
+            </script>
+          </center>
+        </Window>
       </main>
     </div>
 
