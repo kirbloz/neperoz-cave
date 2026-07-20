@@ -1,0 +1,150 @@
+/* ============================================================
+   WINDOW COMPONENT
+   A "retro OS window" UI element: header bar + content box.
+   Colors are controlled by --win-header-bg / --win-border-color, --win-content-a
+   which get set per theme in the THEMES section at the bottom.
+   ============================================================ */
+
+/* ---------- 1. STRUCTURE (layout, spacing, shape — no color) ---------- */
+
+@import url("./variables.css");
+
+.window {
+  background: var(--darker-bg-color);
+  min-width: var(--min-win);
+  max-width: var(--max-win);
+  margin: 10px 0;
+  background: var(--darker-bg-color);
+  width: 100%;
+}
+
+.windowHeader {
+  background: var(--win-header-bg);
+  border: 2px solid var(--win-border-color);
+  padding: 6px 6px 6px 4px;
+  text-align: right;
+  border-bottom: 0px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.windowHeader > h1 {
+  float: left;
+  margin: 0px 3px 0 10px;
+  line-height: 30px;
+}
+
+.wincontent {
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+}
+
+.wincontent a {
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.wincontent img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wincontent > h1 {
+  padding: 10px;
+}
+
+.wincontent li {
+  list-style: none;
+}
+
+.wincontent > ul > ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- 2. HEADER BUTTONS (minimize / maximize / close) ---------- */
+
+.windowHeader > span {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+
+  width: 12px;
+  height: 20px;
+  margin-left: 4px;
+  padding: 2px 10px 2px 8px;
+  line-height: 20px;
+  font-size: 19px;
+
+  border: 1px solid var(--darker-bg-color);
+  border-radius: 5px;
+}
+
+.windowHeader > span:hover {
+  background: var(--almostwhite);
+}
+.windowHeader > span.winclose:hover {
+  background: var(--gruv-red);
+}
+.windowHeader > span.winminimize:hover {
+  background: var(--gruv-dark-yellow);
+}
+.windowHeader > span.winmaximize:hover {
+  background: var(--gruv-green);
+}
+
+/* the little icon glyph inside each button */
+.windowHeader > span > span {
+  display: inline-block;
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  width: 10px;
+  height: 8px;
+}
+
+.winminimize > span {
+  border-bottom: 1px solid var(--darker-bg-color);
+}
+.winmaximize > span {
+  border: 1px solid var(--darker-bg-color);
+}
+
+/* ---------- 3. COLOR (theme-driven, uses the CSS variables below) ---------- */
+
+.windowHeader {
+  background: var(--win-header-bg);
+  border: 2px solid var(--win-border-color);
+}
+
+.wincontent {
+  border: 2px solid var(--win-border-color);
+  border-top: none;
+  color: var(--win-content-color, var(--almostwhite));
+}
+
+.wincontent a {
+  color: var(--win-content-a-color, var(--almostwhite));
+}
+
+/* ---------- 4. THEMES (just swap two variables per theme) ---------- */
+
+.window.base {
+  --win-header-bg: #ffb901;
+  --win-border-color: var(--cream);
+}
+.window.pink {
+  --win-header-bg: var(--gruv-dark-purple);
+  --win-border-color: var(--purple);
+}
+.window.last-red {
+  --win-header-bg: #dc251c;
+  --win-border-color: #b21209;
+}
+.window.orangee {
+  --win-header-bg: #d76c4f;
+  --win-border-color: var(--gruv-orange);
+}
+.window.blue {
+  --win-header-bg: var(--gruv-blue);
+  --win-border-color: var(--gruv-aqua);
+}
