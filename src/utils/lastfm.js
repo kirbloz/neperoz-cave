@@ -26,7 +26,7 @@ const getTrack = async () => {
 
     document.getElementById("listening").innerHTML = `
     ${prefix}
-      <img src="${track.image[2]["#text"]}">
+      <img src="${track.image[2]["#text"]}" id="trackImg">
       <div id="trackInfo">
         <h3 id="trackName">${track.name}</h3>
         <p id="artistName">${track.artist["#text"]}</p>
