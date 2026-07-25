@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/neperoz
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://neperoz-cave.nekoweb.org
+  * I am neperoz (https://keybase.io/neperoz) on keybase.
+  * I have a public key ASCXF9H-aaFQ1I8uOJYCmoL8DIJ-BGMquAfJSVYCR3sBZQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01209717d1fe69a150d48f2e3896029a82fc0c827e04632ab807c9495602477b01650a",
+      "host": "keybase.io",
+      "kid": "01209717d1fe69a150d48f2e3896029a82fc0c827e04632ab807c9495602477b01650a",
+      "uid": "e0b361e997ffeccd95cc7512d12b2a19",
+      "username": "neperoz"
+    },
+    "merkle_root": {
+      "ctime": 1784938075,
+      "hash": "5209bf9eb33b02bd2cef53f0de7fa3571ff59c62d0b9ac5dd327f2d73de1ef02993c9e040173136969de4f0b2eed58302543d65f27143d52b17dde1ce7a54b60",
+      "hash_meta": "ba01c98c1f0e56e51a1a7c5dc8d139311c33c5033f8046b8c6a094b11fb05723",
+      "seqno": 27696850
+    },
+    "service": {
+      "entropy": "GvjYmtzwJztQtvmSVVluFWZS",
+      "hostname": "neperoz-cave.nekoweb.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.6.3"
+  },
+  "ctime": 1784938198,
+  "expire_in": 504576000,
+  "prev": "14e831bcb31cedc515a01e1fcbf6a8aae40dda7488a119386d6b95cd9724cf03",
+  "seqno": 5,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEglxfR/mmhUNSPLjiWApqC/AyCfgRjKrgHyUlWAkd7AWUKp3BheWxvYWTESpcCBcQgFOgxvLMc7cUVoB4fy/aoquQN2nSIoRk4bWuVzZckzwPEIHYhSMdt3Sxi9+9nO7f5gfFu1kPhLtqMh0XCbqaz8HTvAgHCo3NpZ8RArvH6qH8jslcpcvO1ATgABVCVCBw7w1QZda70MuZU22dsSdCvo7n2hCFaQUvpwqLWwEgi37ce11Gln2WX5rxEDahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEII8xzXyerVc5lzUBLn+y9FiEiUQel7WoUys+RGS4ywfqo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/neperoz
+
+==================================================================
