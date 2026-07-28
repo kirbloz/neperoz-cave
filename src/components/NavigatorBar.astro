@@ -25,14 +25,107 @@ import "../styles/navigation.css";
   <div class="navigator-bar">
     <div><a href="/about">ABOUT</a></div>
 
-    <div><a href="/blog">BLOG</a></div>
+    <div class="dropdown">
+      <button class="dropbtn">
+        ☰ BLOG
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/blog">BLOG</a>
+        <a href="/404.html">GALLERY (wip)</a>
+      </div>
+    </div>
 
-    <div><a href="/weblog">WEBLOG</a></div>
-
-    <div><a href="/404.html">GALLERY</a></div>
+    <div class="dropdown">
+      <button class="dropbtn">
+        ☰ WEB
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/weblog">WEBLOG</a>
+        <a href="/404.html">LINKS (wip)</a>
+      </div>
+    </div>
 
     <div><a href="https://neperoz-cave.atabook.org/">GUESTBOOK</a></div>
+    <div class="dropdown">
+      <button class="dropbtn">
+        ☰ SHRINES (wip)
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/weblog">PUNK (wip)</a>
+        <a href="/404.html">DOROHEDORO (wip)</a>
+      </div>
+    </div>
 
     <div><a href="/">ENTRY POINT</a></div>
   </div>
 </div>
+<style>
+  /* The dropdown container */
+  button {
+    border: none;
+  }
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px;
+    /*border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;*/
+    background-color: inherit;
+    display: block;
+    font-style: italic;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+
+    padding: 7px 10px 5px;
+
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--fg-color);
+  }
+
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover,
+  .dropdown:hover .dropbtn {
+    background-color: var(--gruv-yellow);
+    color: var(--darker-bg-color);
+  }
+
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    /*border: 2px solid var(--gruv-orange);*/
+    display: none;
+    position: absolute;
+    background-color: rgba(25, 20, 20, 0.9);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: rgba(209, 115, 21, 0.9);
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+</style>
