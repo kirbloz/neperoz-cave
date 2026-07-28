@@ -7,6 +7,11 @@ import FormattedDate from "../components/FormattedDate.astro";
 import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
 
+import Window from "../components/Window.astro";
+
+import "../styles/layout.css";
+import "../styles/window.css";
+
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage, tags } =
@@ -22,17 +27,8 @@ const { title, description, pubDate, updatedDate, heroImage, tags } =
     <Header />
     <div class="container">
       <Sidebar />
-      <div class="window base">
-        <div class="windowHeader">
-          <h1>{title}</h1>
-          <span title="Minimize" class="winminimize"><span></span></span>
-          <span title="Maximize" class="winmaximize"
-            ><span></span><span></span></span
-          >
-          <span title="Close" class="winclose">x</span>
-        </div>
-
-        <div class="wincontent">
+      <main>
+        <Window theme="base" title={title}>
           {
             heroImage && (
               <Image
@@ -71,8 +67,8 @@ const { title, description, pubDate, updatedDate, heroImage, tags } =
               </p>
             )
           }
-        </div>
-      </div>
+        </Window>
+      </main>
     </div>
     <Footer />
   </body><style is:global>
