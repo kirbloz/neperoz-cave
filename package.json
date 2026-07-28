@@ -12,10 +12,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^7.0.2",
+    "@astrojs/mdx": "^7.0.5",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
-    "astro": "^7.0.7",
+    "astro": "^7.1.5",
     "autoprefixer": "^10.5.4",
     "cssnano": "^8.0.2",
     "postcss-import": "^16.1.1",
