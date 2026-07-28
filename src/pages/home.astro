@@ -11,6 +11,7 @@ import wavewarp from "../assets/images/waving-warpstar-transp.png";
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
+import "../styles/global.css";
 import "../styles/layout.css";
 import "../styles/window.css";
 
@@ -104,8 +105,7 @@ function getImage(name: string) {
 
         <div
           class="main"
-          style="display:flex; gap:40px;  flex-wrap: wrap;
-          align-items: flex-start;"
+          style="display:flex; flex-wrap: wrap; margin:0; flex-direction: row; gap:20px; align-items:flex-start;"
         >
           <Window
             theme="pink"
@@ -128,23 +128,22 @@ function getImage(name: string) {
               >
             </div>
           </Window>
-        </div>
 
-        <Window
-          theme="last-red"
-          title="♫ last of em ♫"
-          style="min-width:120px; max-width: 300px;"
-        >
-          <center>
-            <div id="listening"></div>
-            <script type="module">
-              import "../utils/lastfm.js";
-            </script>
-          </center>
-        </Window>
+          <Window
+            theme="last-red"
+            title="♫ last of em ♫"
+            style="min-width:120px; max-width: 300px; gap:10px;"
+          >
+            <center>
+              <div id="listening"></div>
+              <script type="module">
+                import "../utils/lastfm.js";
+              </script>
+            </center>
+          </Window>
+        </div>
       </main>
     </div>
-
     <Footer />
   </body>
 </html>

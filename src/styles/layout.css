@@ -27,7 +27,7 @@ main {
   flex-wrap: wrap;
 }
 main > * {
-  max-width: 500px;
+  /*max-width: 500px;*/
 }
 #webrings-win {
   max-height: 300;
