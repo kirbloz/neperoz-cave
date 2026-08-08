@@ -1,0 +1,53 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Sidebar from "../../components/Sidebar.astro";
+import Footer from "../../components/Footer.astro";
+7;
+import Window from "../../components/Window.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+
+import { Image } from "astro:assets";
+import punk1 from "../../assets/images/punk-1.jpg";
+
+import "../../styles/global.css";
+import "../../styles/layout.css";
+import "../../styles/window.css";
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`PUNK IS NOT DEAD | ${SITE_TITLE}`}
+      description={SITE_DESCRIPTION}
+    />
+  </head>
+  <body>
+    <Header />
+    <div class="container" >
+      <Sidebar />
+      <main>
+        <Window theme="pink" title="join me in the pogo">
+          <h1 style="font-size: clamp(20px, 5vw, 30px);">wip</h1>
+          
+            <div>
+              <p>weeh, im still figuring this page out</p>
+              <Image
+                src={punk1}
+                alt="fist in the air in a concert crowd"
+               
+              />
+            </div>
+              <p>
+                <a href="/home" style="font-weight: bold; color: #ffb901; ">
+                  [ click here to go back home ]
+                </a>
+              </p>
+        </Window>
+      </main>
+    </div>
+    <Footer />
+  </body>
+</html>
